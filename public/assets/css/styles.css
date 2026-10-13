@@ -1,0 +1,6 @@
+/* Temporary preview styles. Replace with approved site styling during migration. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #313131; background: #f7f5f1; }
+main { max-width: 1000px; margin: 0 auto; padding: 48px 24px; }
+h1, a { color: #1b538d; }
+a:focus-visible { outline: 3px solid #0d90a2; outline-offset: 3px; }

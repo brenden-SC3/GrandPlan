@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "outputDirectory": "public",
+  "redirects": [
+    { "source": "/about-1", "destination": "/about", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true }
+  ]
+}
