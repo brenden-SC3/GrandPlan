@@ -3,6 +3,9 @@
   "outputDirectory": "public",
   "redirects": [
     { "source": "/about-1", "destination": "/about", "permanent": true },
-    { "source": "/contact-us", "destination": "/contact", "permanent": true }
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/6-summit-journey-1", "destination": "/6-summit-journey", "permanent": true },
+    { "source": "/on-demand-course-1", "destination": "/on-demand-course", "permanent": true },
+    { "source": "/about-1-1", "destination": "/about", "permanent": true }
   ]
 }
