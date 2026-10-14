@@ -1,0 +1,106 @@
+name: Centralize shared navigation and footer assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/centralize-shared-assets.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: centralize-shared-assets
+  cancel-in-progress: false
+
+jobs:
+  centralize:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Validate and extract shared assets without changing CSS order
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          public = Path('public')
+          paths = sorted(public.glob('*.html'))
+          if len(paths) != 10:
+              raise SystemExit('Expected ten pages; refusing an unreviewed inventory.')
+          patterns = {
+              'navigation': re.compile(r'header\{[^{}]*\}\s*\.nav\{.*?\.navtoggle\{[^{}]*\}', re.S),
+              'footer': re.compile(r'\.tgp-footer\{.*?\.tgp-footer \.tgp-footer-bottom a\{[^{}]*\}', re.S)
+          }
+          event = "t.addEventListener('click',function(){var open=m.classList.toggle('open');t.setAttribute('aria-expanded',open);});"
+          prefix = "var t=document.querySelector('.navtoggle'),m=document.getElementById('menu');"
+          normalize = lambda text: re.sub(r'\s+', '', text)
+          allowed_js = {normalize(prefix + event), normalize(prefix + 'if(t&&m){' + event + '}')}
+          common = {}
+          pending = []
+          for page in paths:
+              original = page.read_bytes().decode('utf-8')
+              updated = original
+              head = re.search(r'<head\b[^>]*>(.*?)</head\s*>', original, re.I | re.S)
+              if not head:
+                  raise SystemExit('Missing head: ' + page.name)
+              css_matches = []
+              for name, pattern in patterns.items():
+                  matches = list(pattern.finditer(original))
+                  if len(matches) != 1:
+                      raise SystemExit('Expected one ' + name + ' block: ' + page.name)
+                  match = matches[0]
+                  if not (head.start() < match.start() < match.end() < head.end()):
+                      raise SystemExit('CSS block outside head: ' + page.name)
+                  preceding_styles = list(re.finditer(r'<style\b[^>]*>', original[:match.start()], re.I))
+                  if not preceding_styles or preceding_styles[-1].group(0).lower() != '<style>':
+                      raise SystemExit('Unexpected style tag attributes: ' + page.name)
+                  if original.rfind('</style>', 0, match.start()) > preceding_styles[-1].start():
+                      raise SystemExit('CSS is not inside a style element: ' + page.name)
+                  block = match.group(0)
+                  if name in common and block != common[name]:
+                      raise SystemExit('Shared CSS differs on ' + page.name + ': ' + name + '. No files changed.')
+                  common[name] = block
+                  replacement = '</style>\n<link rel="stylesheet" href="/assets/css/' + name + '.css">\n<style>'
+                  css_matches.append((match.start(), match.end(), replacement))
+              for start, end, replacement in sorted(css_matches, reverse=True):
+                  updated = updated[:start] + replacement + updated[end:]
+              scripts = list(re.finditer(r'<script>(.*?)</script\s*>', updated, re.I | re.S))
+              candidates = [match for match in scripts if normalize(match.group(1)) in allowed_js]
+              if len(candidates) != 1:
+                  raise SystemExit('Unexpected mobile-menu script: ' + page.name + '. No files changed.')
+              match = candidates[0]
+              replacement = '<script defer src="/assets/js/navigation.js"></script>'
+              updated = updated[:match.start()] + replacement + updated[match.end():]
+              before_body = original[original.lower().index('</head>') + 7:]
+              after_body = updated[updated.lower().index('</head>') + 7:]
+              original_script = next(match.group(0) for match in re.finditer(r'<script>(.*?)</script\s*>', before_body, re.I | re.S) if normalize(match.group(1)) in allowed_js)
+              if before_body.replace(original_script, replacement, 1) != after_body:
+                  raise SystemExit('Unexpected body change: ' + page.name)
+              pending.append((page, updated))
+
+          targets = [public / 'assets/css/navigation.css', public / 'assets/css/footer.css', public / 'assets/js/navigation.js']
+          if any(path.exists() for path in targets):
+              raise SystemExit('A target shared file already exists; refusing to overwrite it.')
+          shared_js = "(function () {\n  var t = document.querySelector('.navtoggle');\n  var m = document.getElementById('menu');\n  if (t && m) {\n    t.addEventListener('click', function () {\n      var open = m.classList.toggle('open');\n      t.setAttribute('aria-expanded', open);\n    });\n  }\n})();\n"
+          targets[0].write_text(common['navigation'] + '\n', encoding='utf-8')
+          targets[1].write_text(common['footer'] + '\n', encoding='utf-8')
+          targets[2].write_text(shared_js, encoding='utf-8')
+          for page, updated in pending:
+              page.write_bytes(updated.encode('utf-8'))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('Centralized matching navigation/footer CSS and mobile-menu JavaScript across all ten pages. CSS cascade positions, page-specific responsive rules, navbar/footer markup, other scripts, and metadata were preserved.\n')
+          PY
+      - name: Commit extraction and remove this temporary workflow
+        run: |
+          git add -- public
+          git rm -- .github/workflows/centralize-shared-assets.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Centralize navigation and footer styles and mobile menu script'
+          git push origin HEAD:main
