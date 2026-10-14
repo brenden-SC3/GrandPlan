@@ -1,0 +1,164 @@
+name: Prepare site metadata and brand icons
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/prepare-site-metadata.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prepare-site-metadata
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Install image-generation dependency for this job only
+        run: python3 -m pip install Pillow==11.3.0
+      - name: Prepare page heads and brand assets
+        run: |
+          python3 - <<'PY'
+          import html
+          import os
+          import re
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from PIL import Image, ImageDraw, ImageFont
+
+          public = Path('public')
+          base = 'https://thegrandplan.org'
+          pages = {
+              'index.html': ('/', 'The Grand Plan — Live Your Fourth Quarter with Purpose', 'Find renewed purpose for your fourth quarter of life. Explore The Grand Plan’s six-summit process of reflection, planning, and meaningful action.'),
+              '6-summit-journey.html': ('/6-summit-journey', 'The 6-Summit Journey | The Grand Plan', 'Explore The Grand Plan’s six-summit journey and discover a guided process for reflection, planning, and renewed purpose in your fourth quarter.'),
+              'on-demand-course.html': ('/on-demand-course', 'On-Demand Growth Course | The Grand Plan', 'Explore The Grand Plan’s on-demand course and its six-summit process for reflecting on what matters and planning a purposeful fourth quarter.'),
+              'individual-access.html': ('/individual-access', 'Get Started with The Grand Plan', 'Explore individual access to The Grand Plan and take the next step toward reflection, planning, and renewed purpose for your fourth quarter of life.'),
+              'groups.html': ('/groups', 'The Grand Plan for Churches & Groups', 'Explore The Grand Plan for your church, organization, or group and start a conversation about pursuing fourth-quarter purpose together.'),
+              'about.html': ('/about', 'About The Grand Plan', 'Learn about The Grand Plan and its approach to helping people reflect, plan, and live their fourth quarter with renewed purpose.'),
+              'contact.html': ('/contact', 'Contact The Grand Plan', 'Start a conversation about The Grand Plan for yourself, your church, organization, or group.'),
+              'donate.html': ('/donate', 'Support The Grand Plan', 'Explore how to support The Grand Plan and its work helping people pursue renewed purpose in their fourth quarter of life.'),
+              'privacy-policy.html': ('/privacy-policy', 'Privacy Policy | The Grand Plan', 'Read The Grand Plan’s website privacy policy and information about the handling of personal information.'),
+              'terms-of-use.html': ('/terms-of-use', 'Terms of Use | The Grand Plan', 'Read the terms of use for The Grand Plan website.')
+          }
+          actual = {p.name for p in public.glob('*.html')}
+          if actual != set(pages):
+              raise SystemExit('Page inventory differs; review metadata coverage before continuing.')
+          logo_path = public / 'assets/images/logo-white--21de178f1ae7.png'
+          if not logo_path.is_file():
+              raise SystemExit('Required existing white logo is missing.')
+
+          class Tag(HTMLParser):
+              def handle_starttag(self, tag, attrs):
+                  self.tag = tag
+                  self.attrs = dict(attrs)
+
+          def strip_existing(match):
+              parser = Tag()
+              parser.feed(match.group(0))
+              attrs = parser.attrs
+              if parser.tag == 'meta':
+                  name = (attrs.get('name') or '').lower()
+                  prop = (attrs.get('property') or '').lower()
+                  if name in {'description', 'theme-color'} or name.startswith('twitter:') or prop.startswith('og:'):
+                      return ''
+              if parser.tag == 'link':
+                  rel = set((attrs.get('rel') or '').lower().split())
+                  if rel.intersection({'canonical', 'icon', 'apple-touch-icon'}):
+                      return ''
+              return match.group(0)
+
+          pending = []
+          for filename, (route, title, description) in pages.items():
+              page = public / filename
+              original = page.read_bytes().decode('utf-8')
+              head = re.search(r'(<head\b[^>]*>)(.*?)(</head\s*>)', original, re.I | re.S)
+              if not head:
+                  raise SystemExit('Missing head: ' + filename)
+              inner = re.sub(r'<title\b[^>]*>.*?</title\s*>', '', head.group(2), flags=re.I | re.S)
+              inner = re.sub(r'<(?:meta|link)\b[^>]*>', strip_existing, inner, flags=re.I)
+              esc = lambda value: html.escape(value, quote=True)
+              url = base + route
+              image = base + '/assets/images/social-share.png'
+              tags = [
+                  '<title>' + esc(title) + '</title>',
+                  '<meta name="description" content="' + esc(description) + '">',
+                  '<link rel="canonical" href="' + url + '">',
+                  '<meta name="theme-color" content="#1A1816">',
+                  '<link rel="icon" href="/favicon.ico" sizes="any">',
+                  '<link rel="icon" type="image/svg+xml" href="/favicon.svg">',
+                  '<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">',
+                  '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">',
+                  '<meta property="og:site_name" content="The Grand Plan">',
+                  '<meta property="og:type" content="website">',
+                  '<meta property="og:locale" content="en_US">',
+                  '<meta property="og:title" content="' + esc(title) + '">',
+                  '<meta property="og:description" content="' + esc(description) + '">',
+                  '<meta property="og:url" content="' + url + '">',
+                  '<meta property="og:image" content="' + image + '">',
+                  '<meta property="og:image:type" content="image/png">',
+                  '<meta property="og:image:width" content="1200">',
+                  '<meta property="og:image:height" content="630">',
+                  '<meta property="og:image:alt" content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">',
+                  '<meta name="twitter:card" content="summary_large_image">',
+                  '<meta name="twitter:title" content="' + esc(title) + '">',
+                  '<meta name="twitter:description" content="' + esc(description) + '">',
+                  '<meta name="twitter:image" content="' + image + '">',
+                  '<meta name="twitter:image:alt" content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">'
+              ]
+              replacement = head.group(1) + inner.rstrip() + '\n' + '\n'.join(tags) + '\n' + head.group(3)
+              updated = original[:head.start()] + replacement + original[head.end():]
+              if updated[updated.lower().index('</head>') + 7:] != original[original.lower().index('</head>') + 7:]:
+                  raise SystemExit('Body changed unexpectedly: ' + filename)
+              pending.append((page, updated))
+
+          svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#1A1816"/><circle cx="11" cy="32" r="5" fill="#FFFFFF"/><circle cx="25" cy="32" r="5" fill="#FFFFFF"/><circle cx="39" cy="32" r="5" fill="#FFFFFF"/><circle cx="53" cy="32" r="5" fill="#C1C549"/></svg>\n'
+          (public / 'favicon.svg').write_text(svg, encoding='utf-8')
+          icon = Image.new('RGB', (512, 512), '#1A1816')
+          draw = ImageDraw.Draw(icon)
+          for x, color in [(11, '#FFFFFF'), (25, '#FFFFFF'), (39, '#FFFFFF'), (53, '#C1C549')]:
+              draw.ellipse(((x - 5) * 8, 27 * 8, (x + 5) * 8, 37 * 8), fill=color)
+          icon.save(public / 'favicon.ico', format='ICO', sizes=[(16, 16), (32, 32), (48, 48)])
+          icon.resize((48, 48), Image.Resampling.LANCZOS).save(public / 'favicon-48.png')
+          icon.resize((180, 180), Image.Resampling.LANCZOS).save(public / 'apple-touch-icon.png')
+
+          card = Image.new('RGB', (1200, 630), '#1A1816')
+          logo = Image.open(logo_path).convert('RGBA')
+          logo.thumbnail((760, 260), Image.Resampling.LANCZOS)
+          card.paste(logo, ((1200 - logo.width) // 2, 145), logo)
+          draw = ImageDraw.Draw(card)
+          text = 'Live your fourth quarter with purpose.'
+          font_path = Path('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
+          for size in range(44, 19, -1):
+              font = ImageFont.truetype(str(font_path), size) if font_path.is_file() else ImageFont.load_default(size=size)
+              box = draw.textbbox((0, 0), text, font=font)
+              if box[2] - box[0] <= 1040:
+                  break
+          draw.text(((1200 - (box[2] - box[0])) // 2 - box[0], 435), text, font=font, fill='#FFFFFF')
+          draw.rectangle((0, 618, 959, 629), fill='#0D90A2')
+          draw.rectangle((960, 618, 1199, 629), fill='#C1C549')
+          card.save(public / 'assets/images/social-share.png')
+          for page, updated in pending:
+              page.write_bytes(updated.encode('utf-8'))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('Prepared metadata for all 10 pages, four favicon/touch-icon files, and a 1200x630 PNG sharing image. Existing page bodies and robots directives were preserved.\n')
+          PY
+      - name: Commit metadata and generated assets
+        run: |
+          git add -- public
+          if git diff --cached --quiet; then
+            echo 'No metadata or icon changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Add page metadata, canonical URLs, social previews, and brand favicon'
+          git push origin HEAD:main
