@@ -1,0 +1,455 @@
+{
+  "images": [
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/Andy%20Cook%20-%20Billy%20Graham%20Center%20endorsement%20-%20.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280,h:1657",
+      "local_path": "public/assets/images/Andy-Cook---Billy-Graham-Center-endorsement--b09dd25f50e2.jpg",
+      "website_path": "/assets/images/Andy-Cook---Billy-Graham-Center-endorsement--b09dd25f50e2.jpg",
+      "pages": [
+        "public/about.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 346864,
+      "sha256": "32c21bd8abb1b84cefdb114ef73f1dd984ddbd3d756b821612f0bd3dcda093c3"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/ab-closing.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/ab-closing--a74b3f756681.jpg",
+      "website_path": "/assets/images/ab-closing--a74b3f756681.jpg",
+      "pages": [
+        "public/about.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 197400,
+      "sha256": "21fd5f251f8eaf24863f6419306848a7e383d578b43068e5b7cbee8f97aab32e"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/book-cover.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/book-cover--89f6abb74f88.jpg",
+      "website_path": "/assets/images/book-cover--89f6abb74f88.jpg",
+      "pages": [
+        "public/about.html",
+        "public/on-demand-course.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 57409,
+      "sha256": "efcfe21ba150facb6669fe10a6fb3c3c43313e1f46e533b86775f0b04feca109"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/closing-cta.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/closing-cta--b723111d0ce3.jpg",
+      "website_path": "/assets/images/closing-cta--b723111d0ce3.jpg",
+      "pages": [
+        "public/6-summit-journey.html",
+        "public/index.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 199013,
+      "sha256": "a154e1c93387813b48c3c8c17b5ff08648b0392e8a034c6303a38a7032bd3dbc"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/cycle-wheel.png/:/rs=w:2560",
+      "local_path": "public/assets/images/cycle-wheel--b3aa2e8b41e9.jpg",
+      "website_path": "/assets/images/cycle-wheel--b3aa2e8b41e9.jpg",
+      "pages": [
+        "public/index.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 45080,
+      "sha256": "9e3bdef3244e8ccd9abac6c99feeb30a7dc6eb6d8369b2c3c23ab6cbbd9eb694"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/dn-closing.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/dn-closing--68231b80adae.jpg",
+      "website_path": "/assets/images/dn-closing--68231b80adae.jpg",
+      "pages": [
+        "public/donate.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 129923,
+      "sha256": "890b59b4ef06560b29108dd701a1a0e3b9b913bc6d29a3f00cf534ef4e3a15ae"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/dn-why.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/dn-why--55175447653a.jpg",
+      "website_path": "/assets/images/dn-why--55175447653a.jpg",
+      "pages": [
+        "public/donate.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 93696,
+      "sha256": "8b8b392c5a88ee44a3e694b1191f43a2ca9c692d0983f76976a3237b0ab018ac"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/gr-closing.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/gr-closing--6f0e2da6475f.jpg",
+      "website_path": "/assets/images/gr-closing--6f0e2da6475f.jpg",
+      "pages": [
+        "public/groups.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 130978,
+      "sha256": "aa713c02af653f880b6f00d32bea24032ca4f9549cd2e9c6d7783e8575bf4d99"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/gr-collage-a.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/gr-collage-a--63b57629f18e.jpg",
+      "website_path": "/assets/images/gr-collage-a--63b57629f18e.jpg",
+      "pages": [
+        "public/groups.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 62460,
+      "sha256": "527a5bfa9295077f93403ef3c2a5f5d7c39afaf465a92d4f34c28300fdaab15e"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/gr-collage-b.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/gr-collage-b--be6861af18f8.jpg",
+      "website_path": "/assets/images/gr-collage-b--be6861af18f8.jpg",
+      "pages": [
+        "public/groups.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 107488,
+      "sha256": "5be3717ae7d2982502567b479fe04f2487cdaa9795c271fbdcfaddea20c07c44"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/hero.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/hero--4330f82c9625.jpg",
+      "website_path": "/assets/images/hero--4330f82c9625.jpg",
+      "pages": [
+        "public/index.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 146362,
+      "sha256": "e54dafbd0d6ae8369bd9b99eff283c8027c8fef6e71994dd34490918813f67eb"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/ia-closing.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/ia-closing--726d31e69aa7.jpg",
+      "website_path": "/assets/images/ia-closing--726d31e69aa7.jpg",
+      "pages": [
+        "public/individual-access.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 197369,
+      "sha256": "4ac730f0a4b3c7d3f4aad6fe078b9f94a50e1cb60d8d53c2943f24953e21fc2e"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/ia-collage-a.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/ia-collage-a--5f949d42cf64.jpg",
+      "website_path": "/assets/images/ia-collage-a--5f949d42cf64.jpg",
+      "pages": [
+        "public/individual-access.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 62460,
+      "sha256": "527a5bfa9295077f93403ef3c2a5f5d7c39afaf465a92d4f34c28300fdaab15e"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/ia-collage-b.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/ia-collage-b--baa44f525dbd.jpg",
+      "website_path": "/assets/images/ia-collage-b--baa44f525dbd.jpg",
+      "pages": [
+        "public/individual-access.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 55256,
+      "sha256": "a55c1a98f48608e02b2b2cc1ff5f50497afb9f1d02a066cbae7b9881423981c8"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/ia-collage-c.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:2046",
+      "local_path": "public/assets/images/ia-collage-c--dc3c54afa835.jpg",
+      "website_path": "/assets/images/ia-collage-c--dc3c54afa835.jpg",
+      "pages": [
+        "public/contact.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 65038,
+      "sha256": "9fb21c5e508685760ceb1ba46887f61806f0d76fa2da269e30e2ebddcc05c733"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/ia-collage-c.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/ia-collage-c--6cc471f85ca7.jpg",
+      "website_path": "/assets/images/ia-collage-c--6cc471f85ca7.jpg",
+      "pages": [
+        "public/individual-access.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 65038,
+      "sha256": "9fb21c5e508685760ceb1ba46887f61806f0d76fa2da269e30e2ebddcc05c733"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/icon-book.png/:/rs=w:2560",
+      "local_path": "public/assets/images/icon-book--b68ce628ca1b.png",
+      "website_path": "/assets/images/icon-book--b68ce628ca1b.png",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 4292,
+      "sha256": "5627553576024820baa2a39b9941b8320611b3b3130e0b23931e4b6e691e0df6"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/icon-clock.png/:/rs=w:2560",
+      "local_path": "public/assets/images/icon-clock--0e1638848f0c.png",
+      "website_path": "/assets/images/icon-clock--0e1638848f0c.png",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 7552,
+      "sha256": "93fc005cd672a2ceb24a3a2b27642ee73f07260d7bd5e4f0dc3257d97ac6a8a8"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/icon-gift.png/:/rs=w:2560",
+      "local_path": "public/assets/images/icon-gift--93eccf4ec9a5.png",
+      "website_path": "/assets/images/icon-gift--93eccf4ec9a5.png",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 3888,
+      "sha256": "066d71d15c25e905c512cbcc95ec0702526855dc2e2a30c8ffc24dcbd49aa692"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/icon-learn.png/:/rs=w:2560",
+      "local_path": "public/assets/images/icon-learn--d8d411134683.png",
+      "website_path": "/assets/images/icon-learn--d8d411134683.png",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 7601,
+      "sha256": "f6e0b817d3f3ff081ff0b90b843c66a23910fad9bd91c750896af4b274f7e0f3"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/icon-map.png/:/rs=w:2560",
+      "local_path": "public/assets/images/icon-map--a98962817b8c.png",
+      "website_path": "/assets/images/icon-map--a98962817b8c.png",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 6185,
+      "sha256": "23a60cd10898b16ac7a8092d850c5a2153184d29d024e3bf277392efe3f9615e"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/icon-people.png/:/rs=w:2560",
+      "local_path": "public/assets/images/icon-people--9e60fe15b928.png",
+      "website_path": "/assets/images/icon-people--9e60fe15b928.png",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 5997,
+      "sha256": "a191d7e25b1ae9a3498c847e3371d1a33b1b5847e316697382367a444240b682"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/logo-color.png/:/rs=w:2560",
+      "local_path": "public/assets/images/logo-color--cd52cf2a4a76.png",
+      "website_path": "/assets/images/logo-color--cd52cf2a4a76.png",
+      "pages": [
+        "public/6-summit-journey.html",
+        "public/about.html",
+        "public/contact.html",
+        "public/donate.html",
+        "public/groups.html",
+        "public/index.html",
+        "public/individual-access.html",
+        "public/on-demand-course.html",
+        "public/privacy-policy.html",
+        "public/terms-of-use.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 17862,
+      "sha256": "834389953851abea6d26dc460eca5f7e6c66df7187863ae0caabe489ae0eeb6b"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/logo-white.png/:/rs=w:2560",
+      "local_path": "public/assets/images/logo-white--21de178f1ae7.png",
+      "website_path": "/assets/images/logo-white--21de178f1ae7.png",
+      "pages": [
+        "public/6-summit-journey.html",
+        "public/about.html",
+        "public/contact.html",
+        "public/donate.html",
+        "public/groups.html",
+        "public/index.html",
+        "public/individual-access.html",
+        "public/on-demand-course.html",
+        "public/privacy-policy.html",
+        "public/terms-of-use.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 15239,
+      "sha256": "41e6ffe9679fc99c380b700eae078d3a39c5d708f3ec361ba5a1452ec69fbc9f"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/od-hero.jpg/:/rs=w:1160,h:761",
+      "local_path": "public/assets/images/od-hero--da1693e16e6c.jpg",
+      "website_path": "/assets/images/od-hero--da1693e16e6c.jpg",
+      "pages": [
+        "public/on-demand-course.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 106192,
+      "sha256": "d448c46d9014a8bbb7b42e3b6603d918cbd6db38d20a8cf5f492c3a2570e8974"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/questions-portrait.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/questions-portrait--3979c0bdf143.jpg",
+      "website_path": "/assets/images/questions-portrait--3979c0bdf143.jpg",
+      "pages": [
+        "public/index.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 79559,
+      "sha256": "bdd1291dd608b614cdec505118323b1be330134ffb39423eb10cec0f43dd4f9d"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/sj-community-cta.png/:/rs=w:2560",
+      "local_path": "public/assets/images/sj-community-cta--5649420112ef.png",
+      "website_path": "/assets/images/sj-community-cta--5649420112ef.png",
+      "pages": [
+        "public/6-summit-journey.html",
+        "public/individual-access.html"
+      ],
+      "content_type": "image/png",
+      "size_bytes": 284066,
+      "sha256": "d8779a4455406da59f9ffe6fba18e392883b0b09a6e03b563fefa296a28ea1c3"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/sj-community.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/sj-community--4c034186ecb1.jpg",
+      "website_path": "/assets/images/sj-community--4c034186ecb1.jpg",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 165414,
+      "sha256": "90b32700e52c5daa72bc6150101fba6d87526ec2aa72c3cc99ae04731d10f9bc"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/sj-contribution.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/sj-contribution--b85b431f9a7d.jpg",
+      "website_path": "/assets/images/sj-contribution--b85b431f9a7d.jpg",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 115885,
+      "sha256": "98a385a377d30f149f20a070e167107959572e0f86f9f2ae52ca5d7e6a4df445"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/sj-health.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/sj-health--a1bb7ec6d650.jpg",
+      "website_path": "/assets/images/sj-health--a1bb7ec6d650.jpg",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 178299,
+      "sha256": "dccee3233a06dfd176729d9a4022f36258e594c8e0b80481edbe68bf04e8a8d8"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/sj-learning.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/sj-learning--b34874cb3194.jpg",
+      "website_path": "/assets/images/sj-learning--b34874cb3194.jpg",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 101049,
+      "sha256": "afc2704be81d1fd59c7d1b2e50e95fc4d25987676220db28811d6002a87486a1"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/sj-legacy.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/sj-legacy--54f1eb1b385b.jpg",
+      "website_path": "/assets/images/sj-legacy--54f1eb1b385b.jpg",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 135408,
+      "sha256": "af70f4f33a4e1500c8faff68ed146c2b5adcb961354872d6a41254b7e38d2d5e"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/sj-peace.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/sj-peace--5f55d23e0129.jpg",
+      "website_path": "/assets/images/sj-peace--5f55d23e0129.jpg",
+      "pages": [
+        "public/6-summit-journey.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 112392,
+      "sha256": "5b2a96a85fa57b0b86d9c188a4c14c2ef53d40d55a2491b0ff148c3f60358858"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/stat-population.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/stat-population--0b8b20ed4a8e.jpg",
+      "website_path": "/assets/images/stat-population--0b8b20ed4a8e.jpg",
+      "pages": [
+        "public/index.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 135028,
+      "sha256": "b944078cb66f5ae99a7b759b144b85e0f4c79f890c3a59b5dca313c5fa718036"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/stat-retire.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/stat-retire--b652fbe1ba06.jpg",
+      "website_path": "/assets/images/stat-retire--b652fbe1ba06.jpg",
+      "pages": [
+        "public/index.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 86558,
+      "sha256": "13250f248a56578101e729f85ba8d29307b7dd1e84c7e807a6ff288fcb05b1cb"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/team-dave.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/team-dave--df25eb9e799a.jpg",
+      "website_path": "/assets/images/team-dave--df25eb9e799a.jpg",
+      "pages": [
+        "public/about.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 27998,
+      "sha256": "2812e966b6281fa98580bc1f1a3bcd474e8695afffc229f531a539aafed2d922"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/team-mark.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/team-mark--3b48f2dc2ea2.jpg",
+      "website_path": "/assets/images/team-mark--3b48f2dc2ea2.jpg",
+      "pages": [
+        "public/about.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 25101,
+      "sha256": "a35599c165614c9a79031ee93629c55663b8c85691524a788385abe82de0747f"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/team-scott.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/team-scott--ec3384786bae.jpg",
+      "website_path": "/assets/images/team-scott--ec3384786bae.jpg",
+      "pages": [
+        "public/about.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 58081,
+      "sha256": "85eb4e1f3a78eda2ee272fead2acdf2efa6706cf7917a6f5031bdc8b658457e4"
+    },
+    {
+      "source_url": "https://img1.wsimg.com/isteam/ip/c9bbec4e-7e90-48f0-a94e-0e82ea8090bd/team-stan.jpg/:/rs=w:2560",
+      "local_path": "public/assets/images/team-stan--11d163ae4cbb.jpg",
+      "website_path": "/assets/images/team-stan--11d163ae4cbb.jpg",
+      "pages": [
+        "public/about.html"
+      ],
+      "content_type": "image/jpeg",
+      "size_bytes": 32534,
+      "sha256": "55b893301696ff3b9f905a4d3076ceff204d8b66c56b1ac9661c14cb249f0325"
+    }
+  ],
+  "failures": []
+}
