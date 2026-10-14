@@ -1,0 +1,99 @@
+name: Migrate site images to local assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-local-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: migrate-local-images
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Verify assets and replace exact image URLs
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import html
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          root = Path.cwd().resolve()
+          public = root / 'public'
+          asset_root = (public / 'assets' / 'images').resolve()
+          manifest = json.loads((root / 'docs/image-migration-manifest.json').read_text())
+          if manifest.get('failures'):
+              raise SystemExit('Manifest contains download failures; refusing to migrate.')
+          mapping = {}
+          for item in manifest['images']:
+              asset = (root / item['local_path']).resolve()
+              if not asset.is_relative_to(asset_root) or not asset.is_file():
+                  raise SystemExit('Missing or unsafe asset: ' + item['local_path'])
+              data = asset.read_bytes()
+              if not data or hashlib.sha256(data).hexdigest() != item['sha256']:
+                  raise SystemExit('Image checksum mismatch: ' + item['local_path'])
+              destination = '/' + asset.relative_to(public).as_posix()
+              if destination != item['website_path']:
+                  raise SystemExit('Manifest path mismatch: ' + item['local_path'])
+              source = item['source_url']
+              if source in mapping and mapping[source] != destination:
+                  raise SystemExit('Conflicting URL mapping: ' + source)
+              mapping[source] = destination
+
+          pattern = re.compile(r'''https://(?:img[0-9]*\.)?wsimg\.com/[^\s"'<>)]*''')
+          pending = []
+          errors = []
+          for page in sorted(public.rglob('*')):
+              if page.suffix.lower() not in {'.html', '.css', '.js'} or not page.is_file():
+                  continue
+              if page.is_symlink():
+                  raise SystemExit('Refusing to modify symlink: ' + str(page))
+              original = page.read_bytes().decode('utf-8')
+              count = [0]
+              def replace(match):
+                  url = html.unescape(match.group(0))
+                  if url not in mapping:
+                      errors.append(page.relative_to(root).as_posix() + ': ' + url)
+                      return match.group(0)
+                  count[0] += 1
+                  return mapping[url]
+              updated = pattern.sub(replace, original)
+              if updated != original:
+                  pending.append((page, updated, count[0]))
+          if errors:
+              raise SystemExit('Unmapped image URLs; no files changed:\n' + '\n'.join(errors))
+          for page, updated, count in pending:
+              page.write_bytes(updated.encode('utf-8'))
+              print(f'{page.relative_to(root)}: {count} image references replaced')
+          total = sum(count for _, _, count in pending)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write(f'Updated {len(pending)} source files and {total} image references. All manifest image checksums verified.\n')
+              for page, _, count in pending:
+                  summary.write(f'- {page.relative_to(root)}: {count} replacements\n')
+          PY
+      - name: Commit migrated page references
+        run: |
+          git add -- public
+          if git diff --cached --quiet; then
+            echo 'No remaining image URLs to migrate.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Use verified root-relative local image assets across site'
+          git push origin HEAD:main
