@@ -1,0 +1,5 @@
+# Public-site crawl policy. Preview indexing is controlled separately.
+User-agent: *
+Disallow:
+
+Sitemap: https://thegrandplan.org/sitemap.xml
