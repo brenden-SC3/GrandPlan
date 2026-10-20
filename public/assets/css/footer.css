@@ -25,4 +25,4 @@
 .prices > .pcard.light > h3{line-height:1.05;margin-bottom:12px}
 .prices > .pcard.blue > .kick{color:#FFFFFF}
 .prices > .pcard.blue > h3{color:#C1C549}
-.prices > .pcard.blue > .badge{color:#C1C549}
+.prices > .pcard.blue > .badge{color:#C1C549;background:rgba(13,144,162,0.3)}
