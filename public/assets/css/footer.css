@@ -84,3 +84,10 @@ body:has(.individual-framed) .closing .btn.white{background:#1B538D;color:#fff}
 body .commband,body:has(.individual-framed) .commband{--community-scale:1.65}
 body .commband .community-visual,body:has(.individual-framed) .commband .grid > div:last-child{height:320px;overflow:hidden}
 }
+
+/* On-Demand hero photo: home-style mobile frame, with no SVG overlay. */
+@media(max-width:940px){
+body .ghero .shot{min-height:0;margin:0 var(--pad) 48px}
+body .ghero .shot > img{position:static;inset:auto;width:100%;height:auto;aspect-ratio:310/356;object-fit:cover;object-position:center;padding:4.516129%;background:linear-gradient(135deg,#0E8FA2 0%,#0E8FA2 35%,#1B538D 68%,#A7BE61 100%)}
+body .ghero .shot > .qcard{position:static;max-width:none;margin:28px 0 0}
+}
