@@ -50,3 +50,9 @@ html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .aud > p
 
 /* About hero: match the citron accent used in the other gradient heroes. */
 html:has(link[rel="canonical"][href="https://thegrandplan.org/about"]) .banner h1 em.accent{color:#C1C549}
+
+/* Individual Access audience icons: original Figma artwork and aligned text. */
+html:has(link[rel="canonical"][href="https://thegrandplan.org/individual-access"]) .aud{position:relative;padding-left:54px;min-height:42px}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/individual-access"]) .aud::before{content:"";position:absolute;left:0;top:-6px;width:42px;height:42px;background:url('/assets/images/individual-compass.svg') center / 34px 34px no-repeat;pointer-events:none}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/individual-access"]) .aud + .aud::before{background-image:url('/assets/images/individual-map.svg');background-size:35px 32px}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/individual-access"]) .aud + .aud + .aud::before{background-image:url('/assets/images/individual-sun.svg');background-size:42px 42px}
