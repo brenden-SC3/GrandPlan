@@ -103,3 +103,10 @@ html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .two.top
 html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .two.top .btnrow > .btn.citron{width:100%;max-width:100%;white-space:normal;text-align:center}
 html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .two.top .btnrow:has(> .tlink[href="/individual-access"]){padding-bottom:28px;border-bottom:1px solid var(--rule)}
 }
+
+/* Home closing CTA: desktop row only; leave mobile and other pages unchanged. */
+@media(min-width:941px){
+html:has(link[rel="canonical"][href="https://thegrandplan.org/"]) .closing .box{max-width:800px}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/"]) .closing .btnrow{flex-wrap:nowrap}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/"]) .closing .btnrow > .btn{white-space:nowrap}
+}
