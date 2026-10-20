@@ -40,3 +40,7 @@ body:has(.ghero) .two.top > .pcard.light > .feat > .t::before{content:"";positio
 body:has(.ghero) .two.top > .pcard.light > .feat{--enterprise-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M14 2L17.5 10.5L26 11L19.5 17L21.5 25L14 20.5L6.5 25L8.5 17L2 11L10.5 10.5Z'/%3E%3C/svg%3E")}
 body:has(.ghero) .two.top > .pcard.light > .feat + .feat{--enterprise-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none' stroke='black' stroke-width='2.5'%3E%3Cpath d='M4 14L10.5 20L24 6'/%3E%3C/svg%3E")}
 body:has(.ghero) .two.top > .pcard.light > .feat + .feat + .feat{--enterprise-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none' stroke='black' stroke-width='1.8'%3E%3Ccircle cx='14' cy='14' r='11.5'/%3E%3Ccircle cx='14' cy='14' r='8'/%3E%3C/svg%3E")}
+
+/* Groups hero: citron heading accent and matching per-user badge. */
+html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .phero h1 em.accent{color:#C1C549}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .phero .pricebox .tag{color:#0D90A2;background:rgba(13,144,162,.2);font-weight:700}
