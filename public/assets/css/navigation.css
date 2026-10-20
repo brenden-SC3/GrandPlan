@@ -1,11 +1,14 @@
 header{background:#fff;border-bottom:1px solid transparent}.nav{display:flex;align-items:center;gap:34px;padding:18px 0}.nav img{width:150px;aspect-ratio:1211/455;height:auto}.nav ul{list-style:none;display:flex;gap:30px;margin:0 0 0 auto;padding:0}.nav a{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);text-decoration:none}.nav a:hover{color:var(--blue)}.navtoggle{display:none;margin-left:auto;background:none;border:0;font-size:26px;color:var(--blue);cursor:pointer}
 
-/* Mobile-only CTA row; specificity overrides page-level .nav .btn hiding. */
+/* Keep the desktop CTA; its mobile copy is the last menu item. */
+header .nav .nav-mobile-cta{display:none}
 @media(max-width:940px){
-header .nav{position:relative;flex-wrap:wrap;gap:12px 20px;padding:16px var(--pad)}
-header .nav > a:first-child{order:0;max-width:calc(100% - 64px)}
-header .nav > .navtoggle{order:1;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin-left:auto;padding:4px}
-header .nav > a.btn.blue{order:3;display:block;flex:0 0 100%;max-width:100%;min-height:44px;padding:14px 20px;text-align:center;white-space:normal;background:var(--blue);color:#fff}
-header .nav > ul{order:4;z-index:100}
+header .nav{position:relative;flex-wrap:nowrap;gap:20px;padding:16px var(--pad)}
+header .nav > a:first-child{max-width:calc(100% - 64px)}
+header .nav > .navtoggle{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin-left:auto;padding:4px}
+header .nav > a.btn.blue{display:none}
+header .nav > ul{z-index:100}
 header .nav > ul.open{top:100%;left:0;right:0}
+header .nav .nav-mobile-cta{display:block;width:100%}
+header .nav .nav-mobile-cta > a.btn.blue{display:block;width:100%;min-height:44px;padding:14px 20px;text-align:center;white-space:normal;background:var(--blue);color:#fff}
 }

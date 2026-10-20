@@ -2,6 +2,16 @@
   var t = document.querySelector('.navtoggle');
   var m = document.getElementById('menu');
   if (t && m) {
+    var nav = t.closest('.nav');
+    var cta = nav && nav.querySelector(':scope > a.btn.blue');
+    if (cta && !m.querySelector('.nav-mobile-cta')) {
+      var item = document.createElement('li');
+      item.className = 'nav-mobile-cta';
+      var mobileCta = cta.cloneNode(true);
+      mobileCta.removeAttribute('id');
+      item.appendChild(mobileCta);
+      m.appendChild(item);
+    }
     t.addEventListener('click', function () {
       var open = m.classList.toggle('open');
       t.setAttribute('aria-expanded', open);
