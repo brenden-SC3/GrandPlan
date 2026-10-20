@@ -1,68 +1,932 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css">
-<style>
-html{overflow-x:hidden}:root{--blue:#1B538D;--teal:#0D90A2;--citron:#C1C549;--navy:#0A1F36;--slate:#263443;--cream:#F7F5F1;--ink:#313131;--ink-soft:#666;--rule:#D8D5D0;--white:#fff;--sans:'Montserrat',system-ui,sans-serif;--body:'Montserrat',system-ui,sans-serif;--serif:'Lora',Georgia,serif;--wrap:1240px;--pad:32px}*{box-sizing:border-box}html,body{margin:0;padding:0}body{margin:0;font-family:var(--body);color:var(--ink);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{color:var(--blue)}.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
-.eyebrow{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 14px;display:flex;align-items:center;gap:16px}.eyebrow.dash::before{content:"";width:38px;height:2px;background:var(--citron);flex:none}.eyebrow.on-dark{color:var(--citron)}h1,h2,h3{font-family:var(--sans);font-weight:700;color:var(--blue);line-height:1.14;margin:0 0 18px}h1{font-size:clamp(36px,4.3vw,58px)}h2{font-size:clamp(28px,3.3vw,43px)}h3{font-size:clamp(20px,1.7vw,24px)}em.accent{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--teal)}p{margin:0 0 18px}hr.rule{border:0;border-top:1px solid var(--rule);margin:0 0 46px}.lede{max-width:46ch}
-.btn{display:inline-block;font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:16px 26px;text-decoration:none;border:0;transition:filter .15s ease}.btn:hover{filter:brightness(1.08)}.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:3px}.btn.blue{background:var(--blue);color:#fff}.btn.citron{background:var(--citron);color:var(--blue)}.btn.white{background:#fff;color:var(--blue)}.tlink{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);text-decoration:none;white-space:nowrap}.tlink::after{content:" \2192"}.tlink.on-dark{color:#fff}.btnrow{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:28px}
-</style>
-<link rel="stylesheet" href="/assets/css/navigation.css">
-<style>section{padding:92px 0}.cream{background:var(--cream)}.two{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}.two.top{align-items:start}.golddiv{height:3px;background:var(--citron)}
-.closing{position:relative;padding:0;color:#fff}.closing img{width:100%;height:460px;object-fit:cover;object-position:center 42%}.closing .over{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,30,.82) 30%,rgba(10,20,30,.15));display:flex;align-items:center}.closing .box{max-width:560px}.closing h2{color:#fff;margin-bottom:14px}.closing p{color:#E3E8EC;font-size:15.5px;max-width:44ch}
-.phero{background:linear-gradient(90deg,var(--blue),var(--teal));color:#fff;padding:76px 0 84px}.phero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}.phero h1{color:#fff}.phero p{color:#E6EEF3}.pricebox{background:#fff;border-top:4px solid var(--citron);padding:34px 32px}.pricebox .kick{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin:0 0 10px}.pricebox .amt{font-family:var(--sans);font-weight:700;font-size:54px;line-height:1;color:var(--blue)}.pricebox .tag{display:inline-block;background:#E4F1F3;color:var(--blue);font-size:13px;padding:6px 14px;margin-top:12px}.pricebox hr{border:0;border-top:1px solid var(--rule);margin:22px 0}.pricebox .t{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin:0 0 14px}.checks{list-style:none;margin:0;padding:0}.checks li{position:relative;padding-left:30px;margin-bottom:11px;font-size:15px;color:var(--ink)}.checks li::before{content:"";position:absolute;left:2px;top:6px;width:12px;height:7px;border-left:2.5px solid #4C9A3F;border-bottom:2.5px solid #4C9A3F;transform:rotate(-45deg)}.aud{margin-bottom:24px}.aud .t{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin:0 0 5px}.aud p{font-size:14.5px;color:var(--ink-soft);margin:0}
-.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px;background:var(--teal);padding:14px;position:relative}.collage img{width:100%;height:100%;object-fit:cover;display:block}.collage .tall{grid-row:span 2;aspect-ratio:3/4}.collage .sq{aspect-ratio:4/3}.collage::after{content:"";position:absolute;right:24px;bottom:24px;width:12px;height:12px;border-radius:50%;background:var(--citron)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.stepcard{background:#fff;border-top:3px solid var(--citron);padding:28px 26px}.stepcard .n{font-family:var(--sans);font-weight:700;font-size:34px;color:var(--blue);line-height:1;margin-bottom:14px}.stepcard .t{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin:0 0 8px}.stepcard p{font-size:14px;color:var(--ink-soft);margin:0}.notready{margin-top:34px;font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}.notready a{color:var(--teal)}
-.commband{background:linear-gradient(90deg,var(--blue),var(--teal));color:#fff;padding:0;overflow:hidden}.commband .grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:var(--wrap);margin:0 auto;gap:40px}.commband .copy{padding:66px var(--pad)}.commband h2{color:#fff}.commband p{color:#DCE9EF}.commband img{aspect-ratio:900/601;object-fit:cover}.pullq{background:var(--navy);color:#fff;padding:88px 0}.pullq .grid{display:grid;grid-template-columns:.28fr .72fr;gap:44px;align-items:start}.pullq .who{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--citron)}.pullq .role{font-size:14.5px;color:#C3CCD6}.pullq blockquote{margin:0;border-left:1px solid #33465A;padding-left:44px;font-family:var(--serif);font-size:clamp(23px,2.6vw,34px);line-height:1.34;color:#fff}.pullq blockquote em{font-style:italic;color:var(--citron)}.pullq .mark{color:var(--citron);font-family:var(--serif);font-size:52px;line-height:0;vertical-align:-8px;margin-right:6px}
-</style>
-<link rel="stylesheet" href="/assets/css/footer.css">
-<style>
-@media(max-width:940px){.two{grid-template-columns:1fr;gap:40px}.nav ul{display:none}.nav ul.open{display:flex;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:22px var(--pad);gap:18px;box-shadow:0 12px 24px rgba(0,0,0,.09)}.navtoggle{display:block}.nav .btn{display:none}header{position:relative}section{padding:64px 0}.closing img{height:560px}.closing .over{background:linear-gradient(180deg,rgba(10,20,30,.55),rgba(10,20,30,.88))}.phero .grid,.steps,.commband .grid,.pullq .grid{grid-template-columns:1fr;gap:32px}.collage{grid-template-columns:1fr}.collage .tall{grid-row:auto;aspect-ratio:4/3}.commband .copy{padding:52px var(--pad) 20px}.pullq blockquote{border-left:0;padding-left:0}.tgp-footer .tgp-footer-grid{grid-template-columns:1fr;gap:40px}.tgp-footer .tgp-footer-bottom{flex-direction:column}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-</style>
-<style>
-/* Individual Access hero only. */
-.phero h1 em.accent{color:var(--citron)}
-.phero .pricebox .tag{color:var(--teal);background:rgba(13,144,162,.2);font-weight:700}
-.phero .grid > div:first-child > .btnrow{flex-direction:column;align-items:flex-start;gap:16px}
-.phero .btnrow > a{max-width:100%;text-align:center}
-.phero .btnrow > .tlink{display:inline-block;padding:15px 25px;border:1px solid #fff;background:transparent;color:#fff;white-space:normal}
-.phero .btnrow > .tlink::after{content:none}
-.phero .btnrow > .tlink:hover{background:rgba(255,255,255,.1)}
-.phero .btnrow > a:focus-visible{outline-color:#fff}
-/* Single photo and decorative SVG next to the audience text. */
-.individual-framed{position:relative;background:linear-gradient(135deg,#0D90A2 0%,#0D90A2 38%,#1B538D 70%,#A7BE61 100%);padding:3.636364% 5.151515%}
-.individual-framed > img{display:block;width:100%;height:auto;aspect-ratio:296/276;object-fit:cover;object-position:50% 50%}
-.individual-framed > .individual-artwork{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-</style>
-<title>Get Started with The Grand Plan</title>
-<meta name="description" content="Explore individual access to The Grand Plan and take the next step toward reflection, planning, and renewed purpose for your fourth quarter of life.">
-<link rel="canonical" href="https://thegrandplan.org/individual-access">
-<meta name="theme-color" content="#1A1816">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta property="og:site_name" content="The Grand Plan">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:title" content="Get Started with The Grand Plan">
-<meta property="og:description" content="Explore individual access to The Grand Plan and take the next step toward reflection, planning, and renewed purpose for your fourth quarter of life.">
-<meta property="og:url" content="https://thegrandplan.org/individual-access">
-<meta property="og:image" content="https://thegrandplan.org/assets/images/social-share.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Get Started with The Grand Plan">
-<meta name="twitter:description" content="Explore individual access to The Grand Plan and take the next step toward reflection, planning, and renewed purpose for your fourth quarter of life.">
-<meta name="twitter:image" content="https://thegrandplan.org/assets/images/social-share.png">
-<meta name="twitter:image:alt" content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">
-</head><body>
-<header><div class="wrap nav"><a href="/"><img src="/assets/images/logo-color--cd52cf2a4a76.png" alt="The Grand Plan"></a><button class="navtoggle" aria-expanded="false" aria-controls="menu" aria-label="Menu">☰</button><ul id="menu"><li><a href="/6-summit-journey">6-Summit Journey</a></li><li><a href="/on-demand-course">On-Demand Course</a></li><li><a href="/groups">Groups</a></li><li><a href="/about">About</a></li><li><a href="/donate">Donate</a></li></ul><a class="btn blue" href="/contact">Schedule a Conversation</a></div></header>
-<section class="phero"><div class="wrap grid"><div><p class="eyebrow dash on-dark">The Grand Plan on-demand</p><h1>The 6-summit process <em class="accent">on your timeline.</em></h1><p class="lede">Walk through the full 6-summit process with our on-demand course—and find clarity and renewed purpose at your own pace.</p><div class="btnrow"><a class="btn citron" href="https://community.thegrandplan.org/checkout/on-demand-experience-individual">Enroll Now</a><a class="tlink on-dark" href="/contact">Schedule a Conversation</a></div></div><div class="pricebox"><p class="kick">Individual access</p><div class="amt">$129</div><div class="tag">One-time purchase</div><hr><p class="t">What's included</p><ul class="checks"><li>Lifetime access to the on-demand course</li><li>Updatable course dashboard</li><li>Guided videos, exercises, and action steps</li><li><a href="https://www.amazon.com/dp/B0G57PDCBQ" target="_blank" rel="noopener" style="color:inherit">Course workbooks</a> are purchased separately</li></ul></div></div></section><div class="golddiv"></div>
-<section><div class="wrap"><p class="eyebrow">A proven process for a more meaningful future</p><hr class="rule"><div class="two top"><div><h2>For individuals ready to dream bigger.</h2><p style="margin-bottom:30px">If you want something more, but you're not sure what it is or how to find it, this is for you.</p><div class="aud"><p class="t">Looking ahead with intention</p><p>At 40+, you're beginning to think more intentionally about the kind of life you want to build and what to focus on moving forward.</p></div><div class="aud"><p class="t">Planning for what's next</p><p>You're nearing retirement, but when you picture traditional retirement—one centered on relaxing or traveling—it doesn't feel right for you.</p></div><div class="aud"><p class="t">Retired but ready for more</p><p>Retirement looks different than expected, and you're ready to bring new energy, direction, and possibility into your life.</p></div></div><div class="individual-framed"><img src="/assets/images/ia-collage-c--6cc471f85ca7.jpg" alt="A couple talking at home"><svg class="individual-artwork" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 300" aria-hidden="true" focusable="false"><path d="M35 12V139H120 M276 139H299V286" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter"/><circle cx="35" cy="12" r="5.5" fill="#1B538D"/><circle cx="299" cy="286" r="5.5" fill="#C1C549"/></svg></div></div></div></section>
-<section class="cream"><div class="wrap"><p class="eyebrow">Get started today</p><h2 style="margin-bottom:36px">How it works</h2><div class="steps"><div class="stepcard"><div class="n">1.</div><p class="t">Enroll</p><p>Enroll in The Grand Plan on-demand course.</p></div><div class="stepcard"><div class="n">2.</div><p class="t">Journey through the six summits</p><p>Move through the course at your own pace, guided by videos, exercises, and recommended action steps.</p></div><div class="stepcard"><div class="n">3.</div><p class="t">Live your Grand Plan</p><p>Start living the life you want, with clear priorities and goals that shape the way you show up each day.</p></div></div><p class="notready">Not ready to start the course? Get <a href="https://www.amazon.com/dp/B0H2FWZT73" target="_blank" rel="noopener">Unfinished. On Purpose. →</a></p></div></section>
-<section class="commband"><div class="grid"><div class="copy"><p class="eyebrow on-dark">A community for what's next</p><h2>You don't have to <em class="accent">climb</em> alone.</h2><p class="lede">Connect with others who are ready to make this their best quarter yet. Find encouragement, inspiration, and meaningful collaboration as you step into your unfolding purpose.</p><div class="btnrow"><a class="btn citron" href="https://community.thegrandplan.org/checkout/on-demand-experience-individual">Enroll Now to Join The Grand Plan Community</a></div></div><div><img src="/assets/images/sj-community-cta--5649420112ef.png" alt="A member showing The Grand Plan community dashboard"></div></div></section>
-<section class="pullq"><div class="wrap grid"><div><div class="who">Mary</div><div class="role">Retired Engineer</div></div><blockquote><span class="mark">&ldquo;</span>The discussions, exercises, and opportunities for reflection were <em>insightful, encouraging, and thought-provoking.</em></blockquote></div></section>
-<section class="closing"><img src="/assets/images/ia-closing--726d31e69aa7.jpg" alt=""><div class="over"><div class="wrap"><div class="box"><h2>Ready to step into<br><em class="accent" style="color:var(--citron)">what's next?</em></h2><p>Enroll today and build a clear plan for a more purposeful fourth quarter.</p><div class="btnrow"><a class="btn white" href="https://community.thegrandplan.org/checkout/on-demand-experience-individual">Enroll Now</a></div></div></div></div></section>
-<footer class="tgp-footer"><div class="tgp-footer-wrap"><div class="tgp-footer-grid"><div><img class="tgp-footer-logo" src="/assets/images/logo-white--21de178f1ae7.png" alt="The Grand Plan"><p class="tgp-footer-tagline">Live your fourth quarter with purpose.</p><div class="tgp-footer-social"><a class="tgp-social-icon" href="https://www.facebook.com/groups/2991527814527315/" aria-label="Visit The Grand Plan Facebook group"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" aria-hidden="true" focusable="false"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.38 0 225.36 0C152.22 0 104.42 44.38 104.42 124.72v70.62H23.11V288h81.31v224h100.2V288z"/></svg></a></div></div><div><h4>Menu</h4><ul><li><a href="/">Home</a></li><li><a href="/6-summit-journey">6-Summit Journey</a></li><li><a href="/on-demand-course">On-Demand Course</a></li><li><a href="/groups">Groups</a></li><li><a href="/about">About Us</a></li></ul></div><div><h4>Connect</h4><ul><li><a href="/contact">Schedule a Conversation</a></li><li><a href="https://community.thegrandplan.org">Community</a></li><li><a href="/donate">Donate</a></li></ul></div></div><div class="tgp-footer-bottom"><span>© 2026 The Grand Plan Corporation&nbsp;&nbsp; All Rights Reserved.</span><span><a href="/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;<a href="/terms-of-use">Terms of Use</a></span></div></div></footer>
-<script defer src="/assets/js/navigation.js"></script>
-</body></html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <style>
+        html {
+            overflow-x: hidden
+        }
+
+        :root {
+            --blue: #1B538D;
+            --teal: #0D90A2;
+            --citron: #C1C549;
+            --navy: #0A1F36;
+            --slate: #263443;
+            --cream: #F7F5F1;
+            --ink: #313131;
+            --ink-soft: #666;
+            --rule: #D8D5D0;
+            --white: #fff;
+            --sans: 'Montserrat', system-ui, sans-serif;
+            --body: 'Montserrat', system-ui, sans-serif;
+            --serif: 'Lora', Georgia, serif;
+            --wrap: 1240px;
+            --pad: 32px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--body);
+            color: var(--ink);
+            font-size: 16.5px;
+            line-height: 1.62;
+            -webkit-font-smoothing: antialiased
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        a {
+            color: var(--blue)
+        }
+
+        .wrap {
+            max-width: var(--wrap);
+            margin: 0 auto;
+            padding: 0 var(--pad)
+        }
+
+        .eyebrow {
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin: 0 0 14px;
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .eyebrow.dash::before {
+            content: "";
+            width: 38px;
+            height: 2px;
+            background: var(--citron);
+            flex: none
+        }
+
+        .eyebrow.on-dark {
+            color: var(--citron)
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--sans);
+            font-weight: 700;
+            color: var(--blue);
+            line-height: 1.14;
+            margin: 0 0 18px
+        }
+
+        h1 {
+            font-size: clamp(36px, 4.3vw, 58px)
+        }
+
+        h2 {
+            font-size: clamp(28px, 3.3vw, 43px)
+        }
+
+        h3 {
+            font-size: clamp(20px, 1.7vw, 24px)
+        }
+
+        em.accent {
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 400;
+            color: var(--teal)
+        }
+
+        p {
+            margin: 0 0 18px
+        }
+
+        hr.rule {
+            border: 0;
+            border-top: 1px solid var(--rule);
+            margin: 0 0 46px
+        }
+
+        .lede {
+            max-width: 46ch
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            padding: 16px 26px;
+            text-decoration: none;
+            border: 0;
+            transition: filter .15s ease
+        }
+
+        .btn:hover {
+            filter: brightness(1.08)
+        }
+
+        .btn:focus-visible,
+        a:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 3px
+        }
+
+        .btn.blue {
+            background: var(--blue);
+            color: #fff
+        }
+
+        .btn.citron {
+            background: var(--citron);
+            color: var(--blue)
+        }
+
+        .btn.white {
+            background: #fff;
+            color: var(--blue)
+        }
+
+        .tlink {
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            color: var(--blue);
+            text-decoration: none;
+            white-space: nowrap
+        }
+
+        .tlink::after {
+            content: " \2192"
+        }
+
+        .tlink.on-dark {
+            color: #fff
+        }
+
+        .btnrow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            margin-top: 28px
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/navigation.css">
+    <style>
+        section {
+            padding: 92px 0
+        }
+
+        .cream {
+            background: var(--cream)
+        }
+
+        .two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center
+        }
+
+        .two.top {
+            align-items: start
+        }
+
+        .golddiv {
+            height: 3px;
+            background: var(--citron)
+        }
+
+        .closing {
+            position: relative;
+            padding: 0;
+            color: #fff
+        }
+
+        .closing img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            object-position: center 42%
+        }
+
+        .closing .over {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(10, 20, 30, .82) 30%, rgba(10, 20, 30, .15));
+            display: flex;
+            align-items: center
+        }
+
+        .closing .box {
+            max-width: 560px
+        }
+
+        .closing h2 {
+            color: #fff;
+            margin-bottom: 14px
+        }
+
+        .closing p {
+            color: #E3E8EC;
+            font-size: 15.5px;
+            max-width: 44ch
+        }
+
+        .phero {
+            background: linear-gradient(90deg, var(--blue), var(--teal));
+            color: #fff;
+            padding: 76px 0 84px
+        }
+
+        .phero .grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 56px;
+            align-items: start
+        }
+
+        .phero h1 {
+            color: #fff
+        }
+
+        .phero p {
+            color: #E6EEF3
+        }
+
+        .pricebox {
+            background: #fff;
+            border-top: 4px solid var(--citron);
+            padding: 34px 32px
+        }
+
+        .pricebox .kick {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin: 0 0 10px
+        }
+
+        .pricebox .amt {
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: 54px;
+            line-height: 1;
+            color: var(--blue)
+        }
+
+        .pricebox .tag {
+            display: inline-block;
+            background: #E4F1F3;
+            color: var(--blue);
+            font-size: 13px;
+            padding: 6px 14px;
+            margin-top: 12px
+        }
+
+        .pricebox hr {
+            border: 0;
+            border-top: 1px solid var(--rule);
+            margin: 22px 0
+        }
+
+        .pricebox .t {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin: 0 0 14px
+        }
+
+        .checks {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        .checks li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 11px;
+            font-size: 15px;
+            color: var(--ink)
+        }
+
+        .checks li::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 6px;
+            width: 12px;
+            height: 7px;
+            border-left: 2.5px solid #4C9A3F;
+            border-bottom: 2.5px solid #4C9A3F;
+            transform: rotate(-45deg)
+        }
+
+        .aud {
+            margin-bottom: 24px
+        }
+
+        .aud .t {
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin: 0 0 5px
+        }
+
+        .aud p {
+            font-size: 14.5px;
+            color: var(--ink-soft);
+            margin: 0
+        }
+
+        .collage {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 12px;
+            background: var(--teal);
+            padding: 14px;
+            position: relative
+        }
+
+        .collage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .collage .tall {
+            grid-row: span 2;
+            aspect-ratio: 3/4
+        }
+
+        .collage .sq {
+            aspect-ratio: 4/3
+        }
+
+        .collage::after {
+            content: "";
+            position: absolute;
+            right: 24px;
+            bottom: 24px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--citron)
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px
+        }
+
+        .stepcard {
+            background: #fff;
+            border-top: 3px solid var(--citron);
+            padding: 28px 26px
+        }
+
+        .stepcard .n {
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: 34px;
+            color: var(--blue);
+            line-height: 1;
+            margin-bottom: 14px
+        }
+
+        .stepcard .t {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin: 0 0 8px
+        }
+
+        .stepcard p {
+            font-size: 14px;
+            color: var(--ink-soft);
+            margin: 0
+        }
+
+        .notready {
+            margin-top: 34px;
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--ink)
+        }
+
+        .notready a {
+            color: var(--teal)
+        }
+
+        .commband {
+            background: linear-gradient(90deg, var(--blue), var(--teal));
+            color: #fff;
+            padding: 0;
+            overflow: hidden
+        }
+
+        .commband .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            max-width: var(--wrap);
+            margin: 0 auto;
+            gap: 40px
+        }
+
+        .commband .copy {
+            padding: 66px var(--pad)
+        }
+
+        .commband h2 {
+            color: #fff
+        }
+
+        .commband p {
+            color: #DCE9EF
+        }
+
+        .commband img {
+            aspect-ratio: 900/601;
+            object-fit: cover
+        }
+
+        .pullq {
+            background: var(--navy);
+            color: #fff;
+            padding: 88px 0
+        }
+
+        .pullq .grid {
+            display: grid;
+            grid-template-columns: .28fr .72fr;
+            gap: 44px;
+            align-items: start
+        }
+
+        .pullq .who {
+            font-family: var(--sans);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            color: var(--citron)
+        }
+
+        .pullq .role {
+            font-size: 14.5px;
+            color: #C3CCD6
+        }
+
+        .pullq blockquote {
+            margin: 0;
+            border-left: 1px solid #33465A;
+            padding-left: 44px;
+            font-family: var(--serif);
+            font-size: clamp(23px, 2.6vw, 34px);
+            line-height: 1.34;
+            color: #fff
+        }
+
+        .pullq blockquote em {
+            font-style: italic;
+            color: var(--citron)
+        }
+
+        .pullq .mark {
+            color: var(--citron);
+            font-family: var(--serif);
+            font-size: 52px;
+            line-height: 0;
+            vertical-align: -8px;
+            margin-right: 6px
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <style>
+        @media(max-width:940px) {
+            .two {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .nav ul {
+                display: none
+            }
+
+            .nav ul.open {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                padding: 22px var(--pad);
+                gap: 18px;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, .09)
+            }
+
+            .navtoggle {
+                display: block
+            }
+
+            .nav .btn {
+                display: none
+            }
+
+            header {
+                position: relative
+            }
+
+            section {
+                padding: 64px 0
+            }
+
+            .closing img {
+                height: 560px
+            }
+
+            .closing .over {
+                background: linear-gradient(180deg, rgba(10, 20, 30, .55), rgba(10, 20, 30, .88))
+            }
+
+            .phero .grid,
+            .steps,
+            .commband .grid,
+            .pullq .grid {
+                grid-template-columns: 1fr;
+                gap: 32px
+            }
+
+            .collage {
+                grid-template-columns: 1fr
+            }
+
+            .collage .tall {
+                grid-row: auto;
+                aspect-ratio: 4/3
+            }
+
+            .commband .copy {
+                padding: 52px var(--pad) 20px
+            }
+
+            .pullq blockquote {
+                border-left: 0;
+                padding-left: 0
+            }
+
+            .tgp-footer .tgp-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .tgp-footer .tgp-footer-bottom {
+                flex-direction: column
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+
+            html {
+                scroll-behavior: auto
+            }
+        }
+    </style>
+    <style>
+        /* Individual Access hero only. */
+        .phero h1 em.accent {
+            color: var(--citron)
+        }
+
+        .phero .pricebox .tag {
+            color: var(--teal);
+            background: rgba(13, 144, 162, .2);
+            font-weight: 700
+        }
+
+        .phero .grid>div:first-child>.btnrow {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px
+        }
+
+        .phero .btnrow>a {
+            max-width: 100%;
+            text-align: center
+        }
+
+        .phero .btnrow>.tlink {
+            display: inline-block;
+            padding: 15px 25px;
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            white-space: normal
+        }
+
+        .phero .btnrow>.tlink::after {
+            content: none
+        }
+
+        .phero .btnrow>.tlink:hover {
+            background: rgba(255, 255, 255, .1)
+        }
+
+        .phero .btnrow>a:focus-visible {
+            outline-color: #fff
+        }
+
+        /* Single photo and decorative SVG next to the audience text. */
+        .individual-framed {
+            position: relative;
+            background: linear-gradient(135deg, #0D90A2 0%, #0D90A2 38%, #1B538D 70%, #A7BE61 100%);
+            padding: 3.636364% 5.151515%
+        }
+
+        .individual-framed>img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 296/276;
+            object-fit: cover;
+            object-position: 75% 50%
+        }
+
+        .individual-framed>.individual-artwork {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none
+        }
+    </style>
+    <title>Get Started with The Grand Plan</title>
+    <meta name="description"
+        content="Explore individual access to The Grand Plan and take the next step toward reflection, planning, and renewed purpose for your fourth quarter of life.">
+    <link rel="canonical" href="https://thegrandplan.org/individual-access">
+    <meta name="theme-color" content="#1A1816">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:site_name" content="The Grand Plan">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Get Started with The Grand Plan">
+    <meta property="og:description"
+        content="Explore individual access to The Grand Plan and take the next step toward reflection, planning, and renewed purpose for your fourth quarter of life.">
+    <meta property="og:url" content="https://thegrandplan.org/individual-access">
+    <meta property="og:image" content="https://thegrandplan.org/assets/images/social-share.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"
+        content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Get Started with The Grand Plan">
+    <meta name="twitter:description"
+        content="Explore individual access to The Grand Plan and take the next step toward reflection, planning, and renewed purpose for your fourth quarter of life.">
+    <meta name="twitter:image" content="https://thegrandplan.org/assets/images/social-share.png">
+    <meta name="twitter:image:alt"
+        content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav"><a href="/"><img src="/assets/images/logo-color--cd52cf2a4a76.png"
+                    alt="The Grand Plan"></a><button class="navtoggle" aria-expanded="false" aria-controls="menu"
+                aria-label="Menu">☰</button>
+            <ul id="menu">
+                <li><a href="/6-summit-journey">6-Summit Journey</a></li>
+                <li><a href="/on-demand-course">On-Demand Course</a></li>
+                <li><a href="/groups">Groups</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/donate">Donate</a></li>
+            </ul><a class="btn blue" href="/contact">Schedule a Conversation</a>
+        </div>
+    </header>
+    <section class="phero">
+        <div class="wrap grid">
+            <div>
+                <p class="eyebrow dash on-dark">The Grand Plan on-demand</p>
+                <h1>The 6-summit process <em class="accent">on your timeline.</em></h1>
+                <p class="lede">Walk through the full 6-summit process with our on-demand course—and find clarity and
+                    renewed purpose at your own pace.</p>
+                <div class="btnrow"><a class="btn citron"
+                        href="https://community.thegrandplan.org/checkout/on-demand-experience-individual">Enroll
+                        Now</a><a class="tlink on-dark" href="/contact">Schedule a Conversation</a></div>
+            </div>
+            <div class="pricebox">
+                <p class="kick">Individual access</p>
+                <div class="amt">$129</div>
+                <div class="tag">One-time purchase</div>
+                <hr>
+                <p class="t">What's included</p>
+                <ul class="checks">
+                    <li>Lifetime access to the on-demand course</li>
+                    <li>Updatable course dashboard</li>
+                    <li>Guided videos, exercises, and action steps</li>
+                    <li><a href="https://www.amazon.com/dp/B0G57PDCBQ" target="_blank" rel="noopener"
+                            style="color:inherit">Course workbooks</a> are purchased separately</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="golddiv"></div>
+    <section>
+        <div class="wrap">
+            <p class="eyebrow">A proven process for a more meaningful future</p>
+            <hr class="rule">
+            <div class="two top">
+                <div>
+                    <h2>For individuals ready to dream bigger.</h2>
+                    <p style="margin-bottom:30px">If you want something more, but you're not sure what it is or how to
+                        find it, this is for you.</p>
+                    <div class="aud">
+                        <p class="t">Looking ahead with intention</p>
+                        <p>At 40+, you're beginning to think more intentionally about the kind of life you want to build
+                            and what to focus on moving forward.</p>
+                    </div>
+                    <div class="aud">
+                        <p class="t">Planning for what's next</p>
+                        <p>You're nearing retirement, but when you picture traditional retirement—one centered on
+                            relaxing or traveling—it doesn't feel right for you.</p>
+                    </div>
+                    <div class="aud">
+                        <p class="t">Retired but ready for more</p>
+                        <p>Retirement looks different than expected, and you're ready to bring new energy, direction,
+                            and possibility into your life.</p>
+                    </div>
+                </div>
+                <div class="individual-framed"><img src="/assets/images/ia-collage-c--6cc471f85ca7.jpg"
+                        alt="A couple talking at home"><svg class="individual-artwork"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 300" aria-hidden="true" focusable="false">
+                        <path d="M35 12V149H110 M270 149H299V286" fill="none" stroke="#FFFFFF" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="miter" />
+                        <circle cx="35" cy="12" r="5.5" fill="#1B538D" />
+                        <circle cx="299" cy="286" r="5.5" fill="#C1C549" />
+                    </svg></div>
+            </div>
+        </div>
+    </section>
+    <section class="cream">
+        <div class="wrap">
+            <p class="eyebrow">Get started today</p>
+            <h2 style="margin-bottom:36px">How it works</h2>
+            <div class="steps">
+                <div class="stepcard">
+                    <div class="n">1.</div>
+                    <p class="t">Enroll</p>
+                    <p>Enroll in The Grand Plan on-demand course.</p>
+                </div>
+                <div class="stepcard">
+                    <div class="n">2.</div>
+                    <p class="t">Journey through the six summits</p>
+                    <p>Move through the course at your own pace, guided by videos, exercises, and recommended action
+                        steps.</p>
+                </div>
+                <div class="stepcard">
+                    <div class="n">3.</div>
+                    <p class="t">Live your Grand Plan</p>
+                    <p>Start living the life you want, with clear priorities and goals that shape the way you show up
+                        each day.</p>
+                </div>
+            </div>
+            <p class="notready">Not ready to start the course? Get <a href="https://www.amazon.com/dp/B0H2FWZT73"
+                    target="_blank" rel="noopener">Unfinished. On Purpose. →</a></p>
+        </div>
+    </section>
+    <section class="commband">
+        <div class="grid">
+            <div class="copy">
+                <p class="eyebrow on-dark">A community for what's next</p>
+                <h2>You don't have to <em class="accent">climb</em> alone.</h2>
+                <p class="lede">Connect with others who are ready to make this their best quarter yet. Find
+                    encouragement, inspiration, and meaningful collaboration as you step into your unfolding purpose.
+                </p>
+                <div class="btnrow"><a class="btn citron"
+                        href="https://community.thegrandplan.org/checkout/on-demand-experience-individual">Enroll Now to
+                        Join The Grand Plan Community</a></div>
+            </div>
+            <div><img src="/assets/images/sj-community-cta--5649420112ef.png"
+                    alt="A member showing The Grand Plan community dashboard"></div>
+        </div>
+    </section>
+    <section class="pullq">
+        <div class="wrap grid">
+            <div>
+                <div class="who">Mary</div>
+                <div class="role">Retired Engineer</div>
+            </div>
+            <blockquote><span class="mark">&ldquo;</span>The discussions, exercises, and opportunities for reflection
+                were <em>insightful, encouraging, and thought-provoking.</em></blockquote>
+        </div>
+    </section>
+    <section class="closing"><img src="/assets/images/ia-closing--726d31e69aa7.jpg" alt="">
+        <div class="over">
+            <div class="wrap">
+                <div class="box">
+                    <h2>Ready to step into<br><em class="accent" style="color:var(--citron)">what's next?</em></h2>
+                    <p>Enroll today and build a clear plan for a more purposeful fourth quarter.</p>
+                    <div class="btnrow"><a class="btn white"
+                            href="https://community.thegrandplan.org/checkout/on-demand-experience-individual">Enroll
+                            Now</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="tgp-footer">
+        <div class="tgp-footer-wrap">
+            <div class="tgp-footer-grid">
+                <div><img class="tgp-footer-logo" src="/assets/images/logo-white--21de178f1ae7.png"
+                        alt="The Grand Plan">
+                    <p class="tgp-footer-tagline">Live your fourth quarter with purpose.</p>
+                    <div class="tgp-footer-social"><a class="tgp-social-icon"
+                            href="https://www.facebook.com/groups/2991527814527315/"
+                            aria-label="Visit The Grand Plan Facebook group"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512" aria-hidden="true" focusable="false">
+                                <path
+                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.38 0 225.36 0C152.22 0 104.42 44.38 104.42 124.72v70.62H23.11V288h81.31v224h100.2V288z" />
+                            </svg></a></div>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/6-summit-journey">6-Summit Journey</a></li>
+                        <li><a href="/on-demand-course">On-Demand Course</a></li>
+                        <li><a href="/groups">Groups</a></li>
+                        <li><a href="/about">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="/contact">Schedule a Conversation</a></li>
+                        <li><a href="https://community.thegrandplan.org">Community</a></li>
+                        <li><a href="/donate">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tgp-footer-bottom"><span>© 2026 The Grand Plan Corporation&nbsp;&nbsp; All Rights
+                    Reserved.</span><span><a href="/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;<a
+                        href="/terms-of-use">Terms of Use</a></span></div>
+        </div>
+    </footer>
+    <script defer src="/assets/js/navigation.js"></script>
+</body>
+
+</html>
