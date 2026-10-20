@@ -89,7 +89,8 @@ body .commband .community-visual,body:has(.individual-framed) .commband .grid > 
 @media(max-width:940px){
 body .ghero{background:#fff}
 body .ghero .copy{background:linear-gradient(90deg,#1B538D 0%,#0D90A2 100%);background-size:100% calc(100% - 20px);background-repeat:no-repeat}
-body .ghero .shot{min-height:0;margin:0 var(--pad) 48px}
+body .ghero .shot{min-height:0;margin:0 var(--pad) 24px}
 body .ghero .shot > img{position:static;inset:auto;width:100%;height:auto;aspect-ratio:310/356;object-fit:cover;object-position:center;padding:4.516129%;background:linear-gradient(135deg,#0E8FA2 0%,#0E8FA2 35%,#1B538D 68%,#A7BE61 100%)}
-body .ghero .shot > .qcard{position:static;max-width:none;margin:28px 0 0;box-shadow:0 3px 14px rgba(10,31,54,.12)}
+body .ghero .shot > .qcard{position:static;max-width:none;margin:28px 0 0;box-shadow:0 5px 20px rgba(10,31,54,.20)}
+body .ghero + section{padding-top:32px}
 }
