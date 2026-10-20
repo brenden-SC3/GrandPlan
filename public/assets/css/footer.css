@@ -78,3 +78,9 @@ body:has(.individual-framed) .commband .btnrow{justify-content:flex-start}
 
 /* Individual Access closing enrollment button: blue with white text. */
 body:has(.individual-framed) .closing .btn.white{background:#1B538D;color:#fff}
+
+/* Community artwork: mobile only; preserve all desktop sizing and overlap. */
+@media(max-width:940px){
+body .commband,body:has(.individual-framed) .commband{--community-scale:1.65}
+body .commband .community-visual,body:has(.individual-framed) .commband .grid > div:last-child{height:320px;overflow:hidden}
+}
