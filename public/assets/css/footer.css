@@ -75,3 +75,6 @@ body:has(.individual-framed) .commband .btnrow{justify-content:flex-start}
 @media(min-width:941px){body:has(.individual-framed) .commband .grid > div:last-child img{width:min(100%,420px);left:50%;right:auto;transform:translateX(-50%) scale(var(--community-scale));transform-origin:center bottom}}
 @media(max-width:940px){body:has(.individual-framed) .commband .grid{grid-template-columns:1fr;gap:28px}body:has(.individual-framed) .commband{--community-inset:12px;--community-overlap:0px;--community-scale:1;margin-top:0}body:has(.individual-framed) .commband .copy{max-width:none;padding:48px 0 0}body:has(.individual-framed) .commband .lede{max-width:40ch}body:has(.individual-framed) .commband .grid > div:last-child{height:380px}body:has(.individual-framed) .commband .grid > div:last-child img{height:100%}}
 @media(max-width:600px){body:has(.individual-framed) .notready{min-height:118px;padding:32px 0 32px 100px}body:has(.individual-framed) .notready::before{width:80px;height:118px}}
+
+/* Individual Access closing enrollment button: blue with white text. */
+body:has(.individual-framed) .closing .btn.white{background:#1B538D;color:#fff}
