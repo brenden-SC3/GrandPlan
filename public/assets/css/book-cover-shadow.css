@@ -1,0 +1,6 @@
+/* Separate shadow layer preserves the existing 4px cover trim. */
+.book:has(> img[src="/assets/images/book-cover--89f6abb74f88.jpg"]){--book-cover-width:280px;isolation:isolate}
+.endorse ~ section .book{--book-cover-width:270px}
+.book > img[src="/assets/images/book-cover--89f6abb74f88.jpg"]{grid-area:1 / 2;width:min(100%,var(--book-cover-width));max-width:none;margin:0;justify-self:end;align-self:center;position:relative;z-index:1;box-shadow:none}
+.book:has(> img[src="/assets/images/book-cover--89f6abb74f88.jpg"])::after{content:"";grid-area:1 / 2;width:min(100%,var(--book-cover-width));aspect-ratio:583 / 865;box-sizing:border-box;border:4px solid transparent;background:#fff;background-clip:padding-box;justify-self:end;align-self:center;z-index:0;pointer-events:none;filter:drop-shadow(6px 8px 8px rgba(0,0,0,.16))}
+@media(max-width:940px){.book:has(> img[src="/assets/images/book-cover--89f6abb74f88.jpg"]){--book-cover-width:200px}.endorse ~ section .book{--book-cover-width:190px}.book > img[src="/assets/images/book-cover--89f6abb74f88.jpg"],.book:has(> img[src="/assets/images/book-cover--89f6abb74f88.jpg"])::after{grid-area:2 / 1;justify-self:center}}
