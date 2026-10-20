@@ -44,3 +44,6 @@ body:has(.ghero) .two.top > .pcard.light > .feat + .feat + .feat{--enterprise-ic
 /* Groups hero: citron heading accent and matching per-user badge. */
 html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .phero h1 em.accent{color:#C1C549}
 html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .phero .pricebox .tag{color:#0D90A2;background:rgba(13,144,162,.2);font-weight:700}
+
+/* Align Groups audience descriptions with heading text, clear of the icons. */
+html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .aud > p:not(.t){padding-left:29px}
