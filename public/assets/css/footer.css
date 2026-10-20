@@ -94,3 +94,11 @@ body .ghero .shot > img{position:static;inset:auto;width:100%;height:auto;aspect
 body .ghero .shot > .qcard{position:static;max-width:none;margin:28px 0 0;box-shadow:0 5px 20px rgba(10,31,54,.20)}
 body .ghero + section{padding-top:32px}
 }
+
+/* Groups mobile partner CTA: prevent nowrap links from widening the grid. */
+@media(max-width:940px){
+html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .two.top{grid-template-columns:minmax(0,1fr)}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .two.top > div{min-width:0}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .two.top .tlink{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .two.top .btnrow > .btn.citron{width:100%;max-width:100%;white-space:normal;text-align:center}
+}
