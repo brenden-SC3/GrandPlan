@@ -1,4 +1,10 @@
 (function () {
+  document.querySelectorAll('.tgp-footer a[href="/about"]').forEach(function (link) {
+    if (link.textContent.trim() === 'About Us') link.textContent = 'About';
+  });
+})();
+
+(function () {
   var t = document.querySelector('.navtoggle');
   var m = document.getElementById('menu');
   if (t && m) {
