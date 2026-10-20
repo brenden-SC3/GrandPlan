@@ -19,3 +19,10 @@
 .prices > .pcard.light .feat .t::before{background-image:url('/assets/images/pricing-perspective.svg')}
 .prices > .pcard.light .feat + .feat .t::before{background-image:url('/assets/images/pricing-encouragement.svg')}
 .prices > .pcard.light .feat + .feat + .feat .t::before{background-image:url('/assets/images/pricing-accountability.svg')}
+
+/* Pricing-card heading colors and tighter two-line journey heading. */
+.prices > .pcard.light :is(h1,h2,h3,h4),.prices > .pcard.light .feat .t{color:#1B538D}
+.prices > .pcard.light > h3{line-height:1.05;margin-bottom:12px}
+.prices > .pcard.blue > .kick{color:#FFFFFF}
+.prices > .pcard.blue > h3{color:#C1C549}
+.prices > .pcard.blue > .badge{color:#C1C549}
