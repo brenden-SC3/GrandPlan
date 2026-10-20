@@ -47,3 +47,6 @@ html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .phero .
 
 /* Align Groups audience descriptions with heading text, clear of the icons. */
 html:has(link[rel="canonical"][href="https://thegrandplan.org/groups"]) .aud > p:not(.t){padding-left:29px}
+
+/* About hero: match the citron accent used in the other gradient heroes. */
+html:has(link[rel="canonical"][href="https://thegrandplan.org/about"]) .banner h1 em.accent{color:#C1C549}
