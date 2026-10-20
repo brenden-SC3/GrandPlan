@@ -4,3 +4,18 @@
 .closing .over > .wrap{width:100%;text-align:left}
 .closing .over > .wrap > .box{margin-left:0;margin-right:auto;text-align:left}
 .closing .box .btnrow{justify-content:flex-start}
+
+/* On-demand side-by-side pricing cards and decorative feature icons. */
+.prices{align-items:stretch}
+.prices > .pcard{display:flex;flex-direction:column;min-width:0}
+.prices > .pcard > hr{width:100%;flex-shrink:0}
+.prices > .pcard > .badge{align-self:flex-start}
+.prices > .pcard > .btn{margin-top:auto}
+.prices > .pcard .feat{position:relative;padding-left:40px;flex-shrink:0}
+.prices > .pcard .feat .t::before{content:"";position:absolute;left:0;top:-3px;width:28px;height:26px;background-repeat:no-repeat;background-position:center;background-size:contain}
+.prices > .pcard.blue .feat .t::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none' stroke='%23C1C549' stroke-width='2'%3E%3Cpath d='M14 2L17.5 10.5L26 11L19.5 17L21.5 25L14 20.5L6.5 25L8.5 17L2 11L10.5 10.5Z'/%3E%3C/svg%3E")}
+.prices > .pcard.blue .feat + .feat .t::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none' stroke='%23C1C549' stroke-width='2.5'%3E%3Cpath d='M4 14L10.5 20L24 6'/%3E%3C/svg%3E")}
+.prices > .pcard.blue .feat + .feat + .feat .t::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none' stroke='%23C1C549' stroke-width='1.8'%3E%3Ccircle cx='14' cy='14' r='11.5'/%3E%3Ccircle cx='14' cy='14' r='8'/%3E%3C/svg%3E")}
+.prices > .pcard.light .feat .t::before{background-image:url('/assets/images/pricing-perspective.svg')}
+.prices > .pcard.light .feat + .feat .t::before{background-image:url('/assets/images/pricing-encouragement.svg')}
+.prices > .pcard.light .feat + .feat + .feat .t::before{background-image:url('/assets/images/pricing-accountability.svg')}
