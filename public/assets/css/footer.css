@@ -56,3 +56,22 @@ html:has(link[rel="canonical"][href="https://thegrandplan.org/individual-access"
 html:has(link[rel="canonical"][href="https://thegrandplan.org/individual-access"]) .aud::before{content:"";position:absolute;left:0;top:-6px;width:42px;height:42px;background:url('/assets/images/individual-compass.svg') center / 34px 34px no-repeat;pointer-events:none}
 html:has(link[rel="canonical"][href="https://thegrandplan.org/individual-access"]) .aud + .aud::before{background-image:url('/assets/images/individual-map.svg');background-size:35px 32px}
 html:has(link[rel="canonical"][href="https://thegrandplan.org/individual-access"]) .aud + .aud + .aud::before{background-image:url('/assets/images/individual-sun.svg');background-size:42px 42px}
+
+/* Individual Access book callout and 6-Summit-style community band. */
+body:has(.individual-framed) .notready{position:relative;min-height:148px;padding:60px 0 60px 124px;margin-bottom:0}
+body:has(.individual-framed) .notready::before{content:"";position:absolute;left:0;top:50%;width:100px;height:148px;transform:translateY(-50%);background:url('/assets/images/book-cover--89f6abb74f88.jpg') center / cover no-repeat;clip-path:inset(4px);pointer-events:none}
+body:has(.individual-framed) .commband{--community-inset:16px;--community-overlap:110px;--community-scale:2.3;position:relative;isolation:isolate;background:none;color:#fff;padding:0;margin:24px 0 40px;overflow:visible}
+body:has(.individual-framed) .commband::before{content:"";position:absolute;inset:0 0 0 var(--community-inset);z-index:-1;background:linear-gradient(90deg,var(--blue),var(--teal))}
+body:has(.individual-framed) .commband .grid{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);gap:40px}
+body:has(.individual-framed) .commband .copy{position:relative;z-index:1;max-width:440px;padding:56px 0 56px 48px}
+body:has(.individual-framed) .commband h2{color:#fff;max-width:12ch}
+body:has(.individual-framed) .commband h2 em.accent{color:var(--citron)}
+body:has(.individual-framed) .commband p{color:#DCE9EF}
+body:has(.individual-framed) .commband .eyebrow{color:var(--citron)}
+body:has(.individual-framed) .commband .lede{max-width:38ch;font-size:15.5px;line-height:1.55}
+body:has(.individual-framed) .commband .grid > div:last-child{position:relative;align-self:stretch;min-width:0}
+body:has(.individual-framed) .commband .grid > div:last-child img{position:absolute;right:0;bottom:0;width:100%;height:calc(100% + var(--community-overlap));aspect-ratio:auto;object-fit:contain;object-position:center bottom;transform:scale(var(--community-scale));transform-origin:center bottom}
+body:has(.individual-framed) .commband .btnrow{justify-content:flex-start}
+@media(min-width:941px){body:has(.individual-framed) .commband .grid > div:last-child img{width:min(100%,420px);left:50%;right:auto;transform:translateX(-50%) scale(var(--community-scale));transform-origin:center bottom}}
+@media(max-width:940px){body:has(.individual-framed) .commband .grid{grid-template-columns:1fr;gap:28px}body:has(.individual-framed) .commband{--community-inset:12px;--community-overlap:0px;--community-scale:1;margin-top:0}body:has(.individual-framed) .commband .copy{max-width:none;padding:48px 0 0}body:has(.individual-framed) .commband .lede{max-width:40ch}body:has(.individual-framed) .commband .grid > div:last-child{height:380px}body:has(.individual-framed) .commband .grid > div:last-child img{height:100%}}
+@media(max-width:600px){body:has(.individual-framed) .notready{min-height:118px;padding:32px 0 32px 100px}body:has(.individual-framed) .notready::before{width:80px;height:118px}}
