@@ -2,6 +2,10 @@
   document.querySelectorAll('.tgp-footer a[href="/about"]').forEach(function (link) {
     if (link.textContent.trim() === 'About Us') link.textContent = 'About';
   });
+  document.querySelectorAll('.contact-community-link[href="https://community.thegrandplan.org"], .tgp-footer a[href="https://www.facebook.com/groups/2991527814527315/"]').forEach(function (link) {
+    link.target = '_blank';
+    link.relList.add('noopener');
+  });
 })();
 
 (function () {
