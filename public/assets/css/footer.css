@@ -122,3 +122,8 @@ body:has(.individual-framed) .pullq blockquote{position:relative;margin:0;border
 body:has(.individual-framed) .pullq blockquote em{color:#C1C549;font-style:italic}
 body:has(.individual-framed) .pullq .mark{position:absolute;left:38px;top:12px;margin:0;color:#C1C549;font-family:var(--serif);font-size:70px;line-height:1;vertical-align:baseline}
 }
+
+/* Match both outer white edges on the two desktop community bands. */
+@media(min-width:941px){
+body .commband::before,body:has(.individual-framed) .commband::before{right:var(--community-inset)}
+}
