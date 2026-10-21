@@ -110,3 +110,15 @@ html:has(link[rel="canonical"][href="https://thegrandplan.org/"]) .closing .box{
 html:has(link[rel="canonical"][href="https://thegrandplan.org/"]) .closing .btnrow{flex-wrap:nowrap}
 html:has(link[rel="canonical"][href="https://thegrandplan.org/"]) .closing .btnrow > .btn{white-space:nowrap}
 }
+
+/* Individual Access Mary testimonial: reference layout, desktop only. */
+@media(min-width:941px){
+body:has(.individual-framed) .pullq{background:#0A1F36 url('/assets/images/individual-quote-mountains.svg') center bottom / 100% 100% no-repeat;padding:96px 0 78px}
+body:has(.individual-framed) .pullq .grid{grid-template-columns:minmax(0,.21fr) minmax(0,.79fr);gap:36px;align-items:stretch}
+body:has(.individual-framed) .pullq .grid > div:first-child{align-self:center;padding-left:54px}
+body:has(.individual-framed) .pullq .who{color:#C1C549;font-size:15px;line-height:1.5}
+body:has(.individual-framed) .pullq .role{color:#fff;font-size:14.5px;line-height:1.5}
+body:has(.individual-framed) .pullq blockquote{position:relative;margin:0;border-left:1px solid rgba(255,255,255,.35);padding:16px 0 20px 88px;font-family:var(--serif);font-size:clamp(32px,3.5vw,44px);font-weight:400;line-height:1.14;color:#fff;text-wrap:balance}
+body:has(.individual-framed) .pullq blockquote em{color:#C1C549;font-style:italic}
+body:has(.individual-framed) .pullq .mark{position:absolute;left:38px;top:12px;margin:0;color:#C1C549;font-family:var(--serif);font-size:70px;line-height:1;vertical-align:baseline}
+}
