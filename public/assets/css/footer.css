@@ -113,7 +113,7 @@ html:has(link[rel="canonical"][href="https://thegrandplan.org/"]) .closing .btnr
 
 /* Individual Access Mary testimonial: reference layout, desktop only. */
 @media(min-width:941px){
-body:has(.individual-framed) .pullq{background:#0A1F36 url('/assets/images/individual-quote-mountains.svg') center bottom / 100% 100% no-repeat;padding:96px 0 78px}
+body:has(.individual-framed) .pullq{background:#0A1F36 url('/assets/images/individual-quote-mountains.svg') center bottom / 100% 100% no-repeat;padding:64px 0}
 body:has(.individual-framed) .pullq .grid{grid-template-columns:minmax(0,.21fr) minmax(0,.79fr);gap:36px;align-items:stretch}
 body:has(.individual-framed) .pullq .grid > div:first-child{align-self:center;padding-left:54px}
 body:has(.individual-framed) .pullq .who{color:#C1C549;font-size:15px;line-height:1.5}
