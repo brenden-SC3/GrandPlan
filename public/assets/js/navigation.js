@@ -108,3 +108,12 @@
     trigger.focus({ preventScroll: true });
   });
 })();
+
+// Community artwork must not intercept clicks on overlapping content.
+(function () {
+  document.querySelectorAll('.commband .grid > div > img[src="/assets/images/sj-community-cta--5649420112ef.png"]').forEach(function (image) {
+    image.style.pointerEvents = 'none';
+    image.draggable = false;
+    image.parentElement.style.pointerEvents = 'none';
+  });
+})();
