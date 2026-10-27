@@ -127,3 +127,12 @@ body:has(.individual-framed) .pullq .mark{position:absolute;left:38px;top:12px;m
 @media(min-width:941px){
 body .commband::before,body:has(.individual-framed) .commband::before{right:var(--community-inset)}
 }
+
+/* About and 6-Summit closing banners: grow with content while the photo fills. */
+html:has(link[rel="canonical"]:is([href="https://thegrandplan.org/about"],[href="https://thegrandplan.org/6-summit-journey"])) .closing{display:grid;min-height:460px}
+html:has(link[rel="canonical"]:is([href="https://thegrandplan.org/about"],[href="https://thegrandplan.org/6-summit-journey"])) .closing > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+html:has(link[rel="canonical"]:is([href="https://thegrandplan.org/about"],[href="https://thegrandplan.org/6-summit-journey"])) .closing > .over{position:relative;inset:auto;min-width:0;padding:72px 0}
+@media(max-width:940px){
+html:has(link[rel="canonical"]:is([href="https://thegrandplan.org/about"],[href="https://thegrandplan.org/6-summit-journey"])) .closing{min-height:560px}
+html:has(link[rel="canonical"]:is([href="https://thegrandplan.org/about"],[href="https://thegrandplan.org/6-summit-journey"])) .closing > .over{padding:56px 0}
+}
