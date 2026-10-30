@@ -1,5 +1,6 @@
 {
   "cleanUrls": true,
+  "buildCommand": "node scripts/prepare-site.cjs",
   "outputDirectory": "public",
   "redirects": [
     { "source": "/about-1", "destination": "/about", "permanent": true },
