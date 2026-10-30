@@ -6,16 +6,16 @@ This file is a curated guide to public website content. It is not a crawler perm
 
 ## Main pages
 
-- [Home](https://thegrandplan.org/): Overview of The Grand Plan and its approach to fourth-quarter purpose.
-- [6-Summit Journey](https://thegrandplan.org/6-summit-journey): Learn about the six-summit process.
-- [On-Demand Course](https://thegrandplan.org/on-demand-course): Information about the on-demand course.
-- [Individual Access](https://thegrandplan.org/individual-access): Explore getting started as an individual.
-- [Groups](https://thegrandplan.org/groups): Information for groups exploring The Grand Plan.
-- [About](https://thegrandplan.org/about): Learn about The Grand Plan.
-- [Contact](https://thegrandplan.org/contact): Start a conversation with the team.
-- [Donate](https://thegrandplan.org/donate): Information about supporting The Grand Plan.
+- [Home](https://www.thegrandplan.org/): Overview of The Grand Plan and its approach to fourth-quarter purpose.
+- [6-Summit Journey](https://www.thegrandplan.org/6-summit-journey): Learn about the six-summit process.
+- [On-Demand Course](https://www.thegrandplan.org/on-demand-course): Information about the on-demand course.
+- [Individual Access](https://www.thegrandplan.org/individual-access): Explore getting started as an individual.
+- [Groups](https://www.thegrandplan.org/groups): Information for groups exploring The Grand Plan.
+- [About](https://www.thegrandplan.org/about): Learn about The Grand Plan.
+- [Contact](https://www.thegrandplan.org/contact): Start a conversation with the team.
+- [Donate](https://www.thegrandplan.org/donate): Information about supporting The Grand Plan.
 
 ## Optional
 
-- [Privacy Policy](https://thegrandplan.org/privacy-policy): Website privacy policy.
-- [Terms of Use](https://thegrandplan.org/terms-of-use): Website terms of use.
+- [Privacy Policy](https://www.thegrandplan.org/privacy-policy): Website privacy policy.
+- [Terms of Use](https://www.thegrandplan.org/terms-of-use): Website terms of use.

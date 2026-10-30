@@ -15,6 +15,7 @@ function prepare(directory) {
     if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
     let html = fs.readFileSync(file, 'utf8');
     if (!/<\/head\s*>/i.test(html)) throw new Error(`Missing head closing tag: ${file}`);
+    html = html.replace(/https:\/\/thegrandplan\.org(?=[\/\s"'<>?#)]|$)/g, 'https://www.thegrandplan.org');
     html = html.replace(/<meta\b[^>]*>/gi, tag => {
       const name = tag.match(/\bname\s*=\s*(["'])(.*?)\1/i);
       if (!name || !/^(robots|googlebot|bingbot)$/i.test(name[2])) return tag;
@@ -33,4 +34,4 @@ function prepare(directory) {
 
 prepare(root);
 if (!pages) throw new Error('No HTML pages found');
-console.log(`Prepared ${pages} HTML pages for analytics and indexing.`);
+console.log(`Prepared ${pages} HTML pages for analytics, indexing, and www canonical URLs.`);

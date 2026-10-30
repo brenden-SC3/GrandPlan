@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Production URL inventory. Review page indexing directives before launch. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://thegrandplan.org/</loc></url>
-  <url><loc>https://thegrandplan.org/6-summit-journey</loc></url>
-  <url><loc>https://thegrandplan.org/on-demand-course</loc></url>
-  <url><loc>https://thegrandplan.org/individual-access</loc></url>
-  <url><loc>https://thegrandplan.org/groups</loc></url>
-  <url><loc>https://thegrandplan.org/about</loc></url>
-  <url><loc>https://thegrandplan.org/contact</loc></url>
-  <url><loc>https://thegrandplan.org/donate</loc></url>
-  <url><loc>https://thegrandplan.org/privacy-policy</loc></url>
-  <url><loc>https://thegrandplan.org/terms-of-use</loc></url>
+  <url><loc>https://www.thegrandplan.org/</loc></url>
+  <url><loc>https://www.thegrandplan.org/6-summit-journey</loc></url>
+  <url><loc>https://www.thegrandplan.org/on-demand-course</loc></url>
+  <url><loc>https://www.thegrandplan.org/individual-access</loc></url>
+  <url><loc>https://www.thegrandplan.org/groups</loc></url>
+  <url><loc>https://www.thegrandplan.org/about</loc></url>
+  <url><loc>https://www.thegrandplan.org/contact</loc></url>
+  <url><loc>https://www.thegrandplan.org/donate</loc></url>
+  <url><loc>https://www.thegrandplan.org/privacy-policy</loc></url>
+  <url><loc>https://www.thegrandplan.org/terms-of-use</loc></url>
 </urlset>

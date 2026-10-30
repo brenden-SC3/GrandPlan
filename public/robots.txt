@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://thegrandplan.org/sitemap.xml
+Sitemap: https://www.thegrandplan.org/sitemap.xml
