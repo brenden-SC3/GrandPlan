@@ -1,60 +1,969 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/assets/css/fonts.css">
-<style>
-html{overflow-x:hidden}:root{--blue:#1B538D;--teal:#0D90A2;--citron:#C1C549;--navy:#0A1F36;--cream:#F7F5F1;--ink:#313131;--ink-soft:#666;--rule:#D8D5D0;--sans:'Montserrat',system-ui,sans-serif;--body:'Montserrat',system-ui,sans-serif;--serif:'Lora',Georgia,serif;--wrap:1240px;--pad:32px}*{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:var(--body);color:var(--ink);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{color:var(--blue)}.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
-.eyebrow{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 14px;display:flex;align-items:center;gap:16px}.eyebrow.dash::before{content:"";width:38px;height:2px;background:var(--citron);flex:none}.eyebrow.on-dark{color:var(--citron)}.eyebrow.center{justify-content:center}h1,h2,h3{font-family:var(--sans);font-weight:700;color:var(--blue);line-height:1.14;margin:0 0 18px}h1{font-size:clamp(36px,4.3vw,58px)}h2{font-size:clamp(28px,3.3vw,43px)}h3{font-size:clamp(20px,1.7vw,24px)}em.accent{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--teal)}.on-dark h2,.on-dark h1,.on-dark h3{color:#fff}.on-dark em.accent{color:var(--citron)}p{margin:0 0 18px}hr.rule{border:0;border-top:1px solid var(--rule);margin:0 0 46px}.lede{max-width:46ch}
-.btn{display:inline-block;font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:16px 26px;text-decoration:none;border:0;transition:filter .15s ease}.btn:hover{filter:brightness(1.08)}.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:3px}.btn.blue{background:var(--blue);color:#fff}.btn.citron{background:var(--citron);color:var(--blue)}.tlink{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);text-decoration:none;white-space:nowrap}.tlink::after{content:" \2192"}.tlink.on-dark{color:#fff}.btnrow{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:28px}
-.hero .tlink{white-space:normal}.hero .btn,.meaningful .btn,.navy .btn,.closing .btn{max-width:100%;white-space:normal;text-align:center}
-</style>
-<link rel="stylesheet" href="/assets/css/navigation.css">
-<style>
-section{padding:92px 0}.cream{background:var(--cream)}.navy{background:var(--navy);color:#fff}.navy p{color:#D6DCE4}.two{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}.two.top{align-items:start}.hero{padding:78px 0 88px}.hero .two{gap:64px}.hero .framed{position:relative;background:linear-gradient(135deg,#0E8FA2 0%,#0E8FA2 35%,#1B538D 68%,#A7BE61 100%);padding:4.516129%}.hero .framed img{aspect-ratio:282/328;object-fit:cover;object-position:78% 50%;width:100%}.hero .hero-artwork{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.golddiv{height:3px;background:var(--citron)}
-.meaningful-grid,.questions-grid{position:relative}.meaningful .stat{width:100%;margin:0 0 22px}.meaningful .stat:last-child{margin-bottom:0}@media(min-width:941px){.meaningful-grid::before,.questions-grid::before{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:1px solid #B0B0B0;pointer-events:none}}
-.stat{position:relative;margin-bottom:22px}.stat img{aspect-ratio:21/9;object-fit:cover;width:100%}.stat .overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,31,54,.72) 40%,rgba(10,31,54,.15));display:flex;flex-direction:column;justify-content:flex-end;padding:22px 26px;color:#fff}.stat .num{font-family:var(--sans);font-weight:700;font-size:clamp(28px,3vw,38px);line-height:1}.stat .num sup{color:var(--citron);font-size:.55em;top:-.5em}.stat .lbl{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:6px}.stat .src{font-size:11px;color:#C7CFD9;font-style:italic}.callout{border-left:4px solid var(--citron);padding:4px 0 4px 18px;margin-top:22px}.callout .t{font-family:var(--sans);font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}.callout p{font-size:14.5px;margin:0;color:var(--ink-soft)}.arrows{list-style:none;margin:0;padding:0}.arrows li{position:relative;padding-left:34px;margin-bottom:14px}.arrows li::before{content:"\2192";position:absolute;left:0;top:0;color:var(--teal);font-weight:700}
-.vcard{background:var(--blue);padding:40px 38px}.vcard h3{color:#fff;margin-bottom:14px}.vcard p{color:#D6DCE4;font-size:15.5px}.navy .two > div > img{aspect-ratio:1/1;object-fit:contain}.videoband{background:linear-gradient(180deg,var(--blue) 0%,#2F7391 45%,#7C9E5C 100%);text-align:center;color:#fff;position:relative;overflow:hidden}.videoband .inner{position:relative;z-index:2;max-width:760px;margin:0 auto}.videoband p{color:#EAF1F5}.vwrap{position:relative;margin:38px auto 0;max-width:680px;width:100%;aspect-ratio:16/9;background:rgba(0,0,0,.25)}.vwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.tcard{background:#fff;border-top:3px solid var(--citron);padding:34px 30px}.tcard .q{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.55;color:var(--ink);margin-bottom:22px}.tcard .mark{color:var(--citron);font-family:var(--serif);font-size:38px;line-height:0;display:block;margin-bottom:18px}.tcard .who{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}.tcard .role{font-size:14px;color:var(--ink-soft)}.faqgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 26px}details.faq{border:1px solid var(--rule);background:#fff}details.faq summary{list-style:none;cursor:pointer;padding:20px 54px 20px 24px;position:relative;font-family:var(--sans);font-weight:600;font-size:15px;color:var(--blue)}details.faq summary::-webkit-details-marker{display:none}details.faq summary::after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:22px;font-weight:400;line-height:1}details.faq[open] summary::after{content:"\2013"}details.faq .a{padding:0 24px 22px;font-size:15px;color:var(--ink-soft)}
-.closing{position:relative;padding:0;color:#fff}.closing img{width:100%;height:460px;object-fit:cover;object-position:center 42%}.closing .over{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,30,.82) 30%,rgba(10,20,30,.15));display:flex;align-items:center}.closing .box{max-width:560px}.closing h2{color:#fff;margin-bottom:14px}.closing p{color:#E3E8EC;font-size:15.5px;max-width:44ch}
-</style>
-<link rel="stylesheet" href="/assets/css/footer.css">
-<style>
-@media(max-width:940px){.two,.grid3,.faqgrid{grid-template-columns:1fr;gap:40px}.nav ul{display:none}.nav ul.open{display:flex;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:22px var(--pad);gap:18px;box-shadow:0 12px 24px rgba(0,0,0,.09)}.navtoggle{display:block}.nav .btn{display:none}header{position:relative}section{padding:64px 0}.closing img{height:560px}.closing .over{background:linear-gradient(180deg,rgba(10,20,30,.55),rgba(10,20,30,.88))}.tgp-footer .tgp-footer-grid{grid-template-columns:1fr;gap:40px}.tgp-footer .tgp-footer-bottom{flex-direction:column}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-</style>
-<title>The Grand Plan — Live Your Fourth Quarter with Purpose</title>
-<meta name="description" content="Find renewed purpose for your fourth quarter of life. Explore The Grand Plan’s six-summit process of reflection, planning, and meaningful action.">
-<link rel="canonical" href="https://thegrandplan.org/">
-<meta name="theme-color" content="#1A1816">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta property="og:site_name" content="The Grand Plan">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:title" content="The Grand Plan — Live Your Fourth Quarter with Purpose">
-<meta property="og:description" content="Find renewed purpose for your fourth quarter of life. Explore The Grand Plan’s six-summit process of reflection, planning, and meaningful action.">
-<meta property="og:url" content="https://thegrandplan.org/">
-<meta property="og:image" content="https://thegrandplan.org/assets/images/social-share.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Grand Plan — Live Your Fourth Quarter with Purpose">
-<meta name="twitter:description" content="Find renewed purpose for your fourth quarter of life. Explore The Grand Plan’s six-summit process of reflection, planning, and meaningful action.">
-<meta name="twitter:image" content="https://thegrandplan.org/assets/images/social-share.png">
-<meta name="twitter:image:alt" content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-</head><body>
-<header><div class="wrap nav"><a href="/"><img src="/assets/images/logo-color--cd52cf2a4a76.png" alt="The Grand Plan"></a><button class="navtoggle" aria-expanded="false" aria-controls="menu" aria-label="Menu">☰</button><ul id="menu"><li><a href="/6-summit-journey">6-Summit Journey</a></li><li><a href="/on-demand-course">On-Demand Course</a></li><li><a href="/groups">Groups</a></li><li><a href="/about">About</a></li><li><a href="/donate">Donate</a></li></ul><a class="btn blue" href="/contact">Schedule a Conversation</a></div></header>
-<section class="hero"><div class="wrap two"><div><p class="eyebrow dash">Live with renewed purpose</p><h1>Shape your fourth quarter into your <em class="accent">best quarter yet.</em></h1><p class="lede">The Grand Plan is a proven process of reflection and planning—a guided ascent through six summits that help you find clarity and renewed purpose for your fourth quarter.</p><div class="btnrow"><a class="btn blue" href="https://community.thegrandplan.org/checkout/on-demand-experience-individual" target="_blank" rel="noopener">Get the Grand Plan for Yourself</a><a class="tlink" href="/webinars">Attend a Grand Plan Webinar</a></div></div><div class="framed"><img src="/assets/images/hero--4330f82c9625.jpg" alt="Two people pausing together on a wooded trail"><svg class="hero-artwork" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 356" aria-hidden="true" focusable="false"><path d="M36 14V69H151 M250 69H285V267H242V342" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter"/><circle cx="36" cy="14" r="5.5" fill="#1B538D"/><circle cx="242" cy="342" r="5.5" fill="#C1C54D"/></svg></div></div></section><div class="golddiv"></div>
-<section class="cream meaningful"><div class="wrap"><p class="eyebrow">Standing at the edge of something meaningful</p><hr class="rule"><div class="two top meaningful-grid"><div><h2>Life in your fourth quarter looks different from what you expected.</h2><p>There's a quiet tension you can't ignore. Maybe when you think about traditional retirement—one centered on relaxing or traveling—it doesn't feel right for you.</p><p>Life in your fourth quarter looks different from what you expected, and you're unsure about what comes next.</p><p style="margin:0">You're not the only one. People like you are wrestling with the ongoing desire for meaning and purpose and don't know how or where to find it.</p><div class="btnrow"><a class="btn blue" href="https://community.thegrandplan.org/forms/32351a3f" target="_blank" rel="noopener" aria-label="Sign Up for the Grand Plan Newsletter (opens in a new tab)">Sign Up for the Grand Plan Newsletter</a></div></div><div><figure class="stat"><img src="/assets/images/stat-retire--b652fbe1ba06.jpg" alt=""><figcaption class="overlay"><span class="num">10,000<sup>*</sup></span><span class="lbl">Americans retire each day</span><span class="src">*Based on Social Security data</span></figcaption></figure><figure class="stat" style="margin:0"><img src="/assets/images/stat-population--0b8b20ed4a8e.jpg" alt=""><figcaption class="overlay"><span class="num">77M<sup>*</sup></span><span class="lbl">Americans between the ages of 52–70</span><span class="src">*Based on Census Bureau data</span></figcaption></figure></div></div></div></section>
-<section><div class="wrap two top questions-grid"><div><img src="/assets/images/questions-portrait--3979c0bdf143.jpg" alt="A man looking toward what's next"><div class="callout"><div class="t">Purpose doesn't retire. It relocates.</div><p>As life changes, purpose changes with it. The Grand Plan helps participants feel anchored instead of scattered, energized instead of hesitant, and more connected to what they're building toward.</p></div></div><div><h2><em class="accent">You want something more,</em><br>but you're not sure what it is or how to find it.</h2><p class="eyebrow" style="margin-top:26px">And in the meantime, the questions keep circling.</p><ul class="arrows"><li>What can I do now to build toward the life I want in the future?</li><li>How can I best use my skills and experience to make a greater impact?</li><li>How can I shape a version of "retirement" that energizes me for what's next?</li><li>What is possible in this quarter that wasn't possible earlier in my life?</li></ul><div class="btnrow"><a class="btn blue" href="/individual-access">I'm Ready to Start The Grand Plan</a></div></div></div></section>
-<section class="navy on-dark"><div class="wrap"><p class="eyebrow on-dark">A clear plan for what's next</p><hr class="rule" style="border-color:#2C4258"><div class="two"><div><div class="vcard"><h3>Gain a higher vantage point.</h3><p>The Grand Plan's six summits lift you out of uncertainty and into clarity as you reflect on your strengths, values, and dreams, define specific goals, habits, and opportunities to pursue, and create a day-to-day life driven by what you want to accomplish and who you want to be.</p><a class="tlink on-dark" href="/6-summit-journey">Learn more</a></div><div class="btnrow"><a class="btn citron" href="/webinars">Learn More at a Grand Plan Webinar</a></div></div><div><img src="/assets/images/cycle-wheel--b3aa2e8b41e9.jpg" alt="The Grand Plan cycle: Reflect, Discern, Plan, Live — around Clear Purpose"></div></div></div></section>
-<section class="videoband"><div class="wrap inner"><p class="eyebrow on-dark center">Reimagine what's possible</p><h2 style="color:#fff">Dream Bigger About the Life You Want Now</h2><p>The fourth quarter is an opportunity to use everything you've been building—your experiences, skills, relationships, and wisdom—to bring new possibilities to life.</p><div class="vwrap"><iframe src="https://player.vimeo.com/video/1168437182?h=e445e82510&title=0&byline=0&portrait=0" title="The Grand Plan" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div></section>
-<section class="cream"><div class="wrap"><p class="eyebrow">Testimonials</p><h2 style="margin-bottom:40px">Purpose Taking Shape</h2><div class="grid3"><div class="tcard"><span class="mark">&ldquo;</span><p class="q">Having just turned 62, my head and heart had been yearning for something more. Questions such as, 'What's next?' 'What more can I offer?' and 'How can I serve Christ and live out my passions in the best way possible at my age/phase?' had been mulling in my head and heart for the past few months. Going through The Grand Plan helped inspire, equip, and challenge me for this new season ahead!</p><div class="who">Robin Blumenthal</div><div class="role">Pastor, Speaker, Author</div></div><div class="tcard"><span class="mark">&ldquo;</span><p class="q">The Grand Plan exceeded my expectations in many ways. As someone who recently retired, I had many thoughts about what the years ahead might look like, but those ideas were not well defined in some areas. This course provided both the framework and inspiration I needed to turn those thoughts into a clear and meaningful vision for the future.</p><div class="who">Mary</div><div class="role">Retired Engineer</div></div><div class="tcard"><span class="mark">&ldquo;</span><p class="q">I highly recommend The Grand Plan to anyone approaching retirement or recently retired. It provides a constructive, interesting, and Biblically based experience to help with the transition into your 'fourth quarter' of life. The Grand Plan reinforces the truth that we can have a fulfilling and impactful life in retirement as we effectively engage our families and communities while also pursuing our life's passions.</p><div class="who">Jeff</div><div class="role">Pilot, Former Air Force Officer</div></div></div></div></section>
-<section><div class="wrap"><p class="eyebrow">Frequently asked questions</p><hr class="rule"><div class="faqgrid"><details class="faq"><summary>Who is The Grand Plan for?</summary><div class="a">The Grand Plan is for people approaching or already in their fourth quarter of life. Most participants are between 52 and 70+, though anyone from about 40 onward will find it useful. It's for people who have decades of experience and energy left to give, and who want to be deliberate about where that goes next. If you're asking what comes after the career you built, this was made for you.</div></details><details class="faq"><summary>How is The Grand Plan structured?</summary><div class="a">The process moves through six summits, each building on the one before: Personal Peace, Meaningful Contribution, Expanded Community, Increased Learning, Clear Legacy, and Holistic Health. Every summit combines short videos, guided reflection questions, planning exercises, and practical challenges. The course is entirely self-paced — there's no schedule to keep and no sessions to attend. You work through an updatable course dashboard and keep lifetime access to everything.</div></details><details class="faq"><summary>Why does The Grand Plan focus on the fourth quarter of life?</summary><div class="a">Roughly 10,000 Americans retire every day, and 77 million are between 52 and 70. Most of them were handed a version of retirement built around rest and travel, and for a lot of people that version doesn't fit. The fourth quarter is when your experience, skills, relationships, and wisdom are at their fullest — which makes it the wrong time to coast and the right time to plan.</div></details><details class="faq"><summary>Will participants spend more time on reflection or practical exercises?</summary><div class="a">Both, in roughly equal measure. The early summits lean toward reflection — writing your story, identifying what you're good at, naming what matters. The later ones turn that into specifics: goals, habits, routines, and a plan for how you'll spend your time. Reflection without action doesn't change anything, so every summit ends with something to do.</div></details><details class="faq"><summary>Is The Grand Plan only for people who are retired or planning for retirement?</summary><div class="a">No. Plenty of participants have no intention of retiring, and some are years away from thinking about it. The Grand Plan isn't about leaving work — it's about deciding what you want this stretch of your life to be for. Retirees, people still working, and people somewhere in between all go through the same six summits.</div></details><details class="faq"><summary>Can The Grand Plan be used by churches and small groups?</summary><div class="a">Yes, and it's often better that way. Churches, book clubs, alumni groups, and neighborhood circles use The Grand Plan to move through the process together. Because the course is self-paced, no trained facilitator is required — though a church or group that wants to teach it themselves certainly can. Group licensing starts at $1,500 per year, with additional participants at $35 each.</div></details></div></div></section>
-<section class="closing"><img src="/assets/images/closing-cta--b723111d0ce3.jpg" alt=""><div class="over"><div class="wrap"><div class="box"><h2><em class="accent" style="color:var(--citron)">Your fourth quarter</em><br>can be your best quarter.</h2><p>Get started with The Grand Plan on-demand growth course today. Or, you can schedule a conversation with our team and explore how The Grand Plan can help you dream bigger about your fourth quarter and put a plan into action for living it out.</p><div class="btnrow"><a class="btn citron" href="/individual-access">I'm Ready to Start The Grand Plan</a><a class="btn blue" href="/webinars">Learn More at a Grand Plan Webinar</a></div></div></div></div></section>
-<footer class="tgp-footer"><div class="tgp-footer-wrap"><div class="tgp-footer-grid"><div><img class="tgp-footer-logo" src="/assets/images/logo-white--21de178f1ae7.png" alt="The Grand Plan"><p class="tgp-footer-tagline">Live your fourth quarter with purpose.</p><div class="tgp-footer-social"><a class="tgp-social-icon" href="https://www.facebook.com/groups/2991527814527315/" aria-label="Visit The Grand Plan Facebook group"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" aria-hidden="true" focusable="false"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.38 0 225.36 0C152.22 0 104.42 44.38 104.42 124.72v70.62H23.11V288h81.31v224h100.2V288z"/></svg></a></div></div><div><h4>Menu</h4><ul><li><a href="/">Home</a></li><li><a href="/6-summit-journey">6-Summit Journey</a></li><li><a href="/on-demand-course">On-Demand Course</a></li><li><a href="/groups">Groups</a></li><li><a href="/about">About Us</a></li></ul></div><div><h4>Connect</h4><ul><li><a href="/contact">Schedule a Conversation</a></li><li><a href="https://community.thegrandplan.org">Community</a></li><li><a href="/donate">Donate</a></li></ul></div></div><div class="tgp-footer-bottom"><span>© 2026 The Grand Plan Corporation&nbsp;&nbsp; All Rights Reserved.</span><span><a href="/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;<a href="/terms-of-use">Terms of Use</a></span></div></div></footer>
-<script defer src="/assets/js/navigation.js"></script>
-</body></html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <style>
+        html {
+            overflow-x: hidden
+        }
+
+        :root {
+            --blue: #1B538D;
+            --teal: #0D90A2;
+            --citron: #C1C549;
+            --navy: #0A1F36;
+            --cream: #F7F5F1;
+            --ink: #313131;
+            --ink-soft: #666;
+            --rule: #D8D5D0;
+            --sans: 'Montserrat', system-ui, sans-serif;
+            --body: 'Montserrat', system-ui, sans-serif;
+            --serif: 'Lora', Georgia, serif;
+            --wrap: 1240px;
+            --pad: 32px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: var(--body);
+            color: var(--ink);
+            font-size: 16.5px;
+            line-height: 1.62;
+            -webkit-font-smoothing: antialiased
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        a {
+            color: var(--blue)
+        }
+
+        .wrap {
+            max-width: var(--wrap);
+            margin: 0 auto;
+            padding: 0 var(--pad)
+        }
+
+        .eyebrow {
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin: 0 0 14px;
+            display: flex;
+            align-items: center;
+            gap: 16px
+        }
+
+        .eyebrow.dash::before {
+            content: "";
+            width: 38px;
+            height: 2px;
+            background: var(--citron);
+            flex: none
+        }
+
+        .eyebrow.on-dark {
+            color: var(--citron)
+        }
+
+        .eyebrow.center {
+            justify-content: center
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--sans);
+            font-weight: 700;
+            color: var(--blue);
+            line-height: 1.14;
+            margin: 0 0 18px
+        }
+
+        h1 {
+            font-size: clamp(36px, 4.3vw, 58px)
+        }
+
+        h2 {
+            font-size: clamp(28px, 3.3vw, 43px)
+        }
+
+        h3 {
+            font-size: clamp(20px, 1.7vw, 24px)
+        }
+
+        em.accent {
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 400;
+            color: var(--teal)
+        }
+
+        .on-dark h2,
+        .on-dark h1,
+        .on-dark h3 {
+            color: #fff
+        }
+
+        .on-dark em.accent {
+            color: var(--citron)
+        }
+
+        p {
+            margin: 0 0 18px
+        }
+
+        hr.rule {
+            border: 0;
+            border-top: 1px solid var(--rule);
+            margin: 0 0 46px
+        }
+
+        .lede {
+            max-width: 46ch
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            padding: 16px 26px;
+            text-decoration: none;
+            border: 0;
+            transition: filter .15s ease
+        }
+
+        .btn:hover {
+            filter: brightness(1.08)
+        }
+
+        .btn:focus-visible,
+        a:focus-visible,
+        summary:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 3px
+        }
+
+        .btn.blue {
+            background: var(--blue);
+            color: #fff
+        }
+
+        .btn.citron {
+            background: var(--citron);
+            color: var(--blue)
+        }
+
+        .tlink {
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            color: var(--blue);
+            text-decoration: none;
+            white-space: nowrap
+        }
+
+        .tlink::after {
+            content: " \2192"
+        }
+
+        .tlink.on-dark {
+            color: #fff
+        }
+
+        .btnrow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            margin-top: 28px
+        }
+
+        .hero .tlink {
+            white-space: normal
+        }
+
+        .hero .btn,
+        .meaningful .btn,
+        .navy .btn,
+        .closing .btn {
+            max-width: 100%;
+            white-space: normal;
+            text-align: center
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/navigation.css">
+    <style>
+        section {
+            padding: 92px 0
+        }
+
+        .cream {
+            background: var(--cream)
+        }
+
+        .navy {
+            background: var(--navy);
+            color: #fff
+        }
+
+        .navy p {
+            color: #D6DCE4
+        }
+
+        .two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center
+        }
+
+        .two.top {
+            align-items: start
+        }
+
+        .hero {
+            padding: 78px 0 88px
+        }
+
+        .hero .two {
+            gap: 64px
+        }
+
+        .hero .framed {
+            position: relative;
+            background: linear-gradient(135deg, #0E8FA2 0%, #0E8FA2 35%, #1B538D 68%, #A7BE61 100%);
+            padding: 4.516129%
+        }
+
+        .hero .framed img {
+            aspect-ratio: 282/328;
+            object-fit: cover;
+            object-position: 78% 50%;
+            width: 100%
+        }
+
+        .hero .hero-artwork {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none
+        }
+
+        .golddiv {
+            height: 3px;
+            background: var(--citron)
+        }
+
+        .meaningful-grid,
+        .questions-grid {
+            position: relative
+        }
+
+        .meaningful .stat {
+            width: 100%;
+            margin: 0 0 22px
+        }
+
+        .meaningful .stat:last-child {
+            margin-bottom: 0
+        }
+
+        @media(min-width:941px) {
+
+            .meaningful-grid::before,
+            .questions-grid::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                border-left: 1px solid #B0B0B0;
+                pointer-events: none
+            }
+        }
+
+        .stat {
+            position: relative;
+            margin-bottom: 22px
+        }
+
+        .stat img {
+            aspect-ratio: 21/9;
+            object-fit: cover;
+            width: 100%
+        }
+
+        .stat .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(10, 31, 54, .72) 40%, rgba(10, 31, 54, .15));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 22px 26px;
+            color: #fff
+        }
+
+        .stat .num {
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: clamp(28px, 3vw, 38px);
+            line-height: 1
+        }
+
+        .stat .num sup {
+            color: var(--citron);
+            font-size: .55em;
+            top: -.5em
+        }
+
+        .stat .lbl {
+            font-family: var(--sans);
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-top: 6px
+        }
+
+        .stat .src {
+            font-size: 11px;
+            color: #C7CFD9;
+            font-style: italic
+        }
+
+        .callout {
+            border-left: 4px solid var(--citron);
+            padding: 4px 0 4px 18px;
+            margin-top: 22px
+        }
+
+        .callout .t {
+            font-family: var(--sans);
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 6px
+        }
+
+        .callout p {
+            font-size: 14.5px;
+            margin: 0;
+            color: var(--ink-soft)
+        }
+
+        .arrows {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        .arrows li {
+            position: relative;
+            padding-left: 34px;
+            margin-bottom: 14px
+        }
+
+        .arrows li::before {
+            content: "\2192";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--teal);
+            font-weight: 700
+        }
+
+        .vcard {
+            background: var(--blue);
+            padding: 40px 38px
+        }
+
+        .vcard h3 {
+            color: #fff;
+            margin-bottom: 14px
+        }
+
+        .vcard p {
+            color: #D6DCE4;
+            font-size: 15.5px
+        }
+
+        .navy .two>div>img {
+            aspect-ratio: 1/1;
+            object-fit: contain
+        }
+
+        .videoband {
+            background: linear-gradient(180deg, var(--blue) 0%, #2F7391 45%, #7C9E5C 100%);
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden
+        }
+
+        .videoband .inner {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            margin: 0 auto
+        }
+
+        .videoband p {
+            color: #EAF1F5
+        }
+
+        .vwrap {
+            position: relative;
+            margin: 38px auto 0;
+            max-width: 680px;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: rgba(0, 0, 0, .25)
+        }
+
+        .vwrap iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0
+        }
+
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px
+        }
+
+        .tcard {
+            background: #fff;
+            border-top: 3px solid var(--citron);
+            padding: 34px 30px
+        }
+
+        .tcard .q {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--ink);
+            margin-bottom: 22px
+        }
+
+        .tcard .mark {
+            color: var(--citron);
+            font-family: var(--serif);
+            font-size: 38px;
+            line-height: 0;
+            display: block;
+            margin-bottom: 18px
+        }
+
+        .tcard .who {
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--blue)
+        }
+
+        .tcard .role {
+            font-size: 14px;
+            color: var(--ink-soft)
+        }
+
+        .faqgrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 26px
+        }
+
+        details.faq {
+            border: 1px solid var(--rule);
+            background: #fff
+        }
+
+        details.faq summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 20px 54px 20px 24px;
+            position: relative;
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--blue)
+        }
+
+        details.faq summary::-webkit-details-marker {
+            display: none
+        }
+
+        details.faq summary::after {
+            content: "+";
+            position: absolute;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--teal);
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1
+        }
+
+        details.faq[open] summary::after {
+            content: "\2013"
+        }
+
+        details.faq .a {
+            padding: 0 24px 22px;
+            font-size: 15px;
+            color: var(--ink-soft)
+        }
+
+        .closing {
+            position: relative;
+            padding: 0;
+            color: #fff
+        }
+
+        .closing img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            object-position: center 42%
+        }
+
+        .closing .over {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(10, 20, 30, .82) 30%, rgba(10, 20, 30, .15));
+            display: flex;
+            align-items: center
+        }
+
+        .closing .box {
+            max-width: 560px
+        }
+
+        .closing h2 {
+            color: #fff;
+            margin-bottom: 14px
+        }
+
+        .closing p {
+            color: #E3E8EC;
+            font-size: 15.5px;
+            max-width: 44ch
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <style>
+        @media(max-width:940px) {
+
+            .two,
+            .grid3,
+            .faqgrid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .nav ul {
+                display: none
+            }
+
+            .nav ul.open {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                padding: 22px var(--pad);
+                gap: 18px;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, .09)
+            }
+
+            .navtoggle {
+                display: block
+            }
+
+            .nav .btn {
+                display: none
+            }
+
+            header {
+                position: relative
+            }
+
+            section {
+                padding: 64px 0
+            }
+
+            .closing img {
+                height: 560px
+            }
+
+            .closing .over {
+                background: linear-gradient(180deg, rgba(10, 20, 30, .55), rgba(10, 20, 30, .88))
+            }
+
+            .tgp-footer .tgp-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+
+            .tgp-footer .tgp-footer-bottom {
+                flex-direction: column
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+
+            html {
+                scroll-behavior: auto
+            }
+        }
+    </style>
+    <title>The Grand Plan — Live Your Fourth Quarter with Purpose</title>
+    <meta name="description"
+        content="Find renewed purpose for your fourth quarter of life. Explore The Grand Plan’s six-summit process of reflection, planning, and meaningful action.">
+    <link rel="canonical" href="https://thegrandplan.org/">
+    <meta name="theme-color" content="#1A1816">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:site_name" content="The Grand Plan">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="The Grand Plan — Live Your Fourth Quarter with Purpose">
+    <meta property="og:description"
+        content="Find renewed purpose for your fourth quarter of life. Explore The Grand Plan’s six-summit process of reflection, planning, and meaningful action.">
+    <meta property="og:url" content="https://thegrandplan.org/">
+    <meta property="og:image" content="https://thegrandplan.org/assets/images/social-share.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"
+        content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Grand Plan — Live Your Fourth Quarter with Purpose">
+    <meta name="twitter:description"
+        content="Find renewed purpose for your fourth quarter of life. Explore The Grand Plan’s six-summit process of reflection, planning, and meaningful action.">
+    <meta name="twitter:image" content="https://thegrandplan.org/assets/images/social-share.png">
+    <meta name="twitter:image:alt"
+        content="The Grand Plan logo with the message: Live your fourth quarter with purpose.">
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav"><a href="/"><img src="/assets/images/logo-color--cd52cf2a4a76.png"
+                    alt="The Grand Plan"></a><button class="navtoggle" aria-expanded="false" aria-controls="menu"
+                aria-label="Menu">☰</button>
+            <ul id="menu">
+                <li><a href="/6-summit-journey">6-Summit Journey</a></li>
+                <li><a href="/on-demand-course">On-Demand Course</a></li>
+                <li><a href="/groups">Groups</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/donate">Donate</a></li>
+            </ul><a class="btn blue" href="/contact">Schedule a Conversation</a>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="wrap two">
+            <div>
+                <p class="eyebrow dash">Live with renewed purpose</p>
+                <h1>Shape your fourth quarter into your <em class="accent">best quarter yet.</em></h1>
+                <p class="lede">The Grand Plan is a proven process of reflection and planning—a guided ascent through
+                    six summits that help you find clarity and renewed purpose for your fourth quarter.</p>
+                <div class="btnrow"><a class="btn blue"
+                        href="https://community.thegrandplan.org/checkout/on-demand-experience-individual"
+                        target="_blank" rel="noopener">Get the Grand Plan for Yourself</a><a class="tlink"
+                        href="/webinars">Attend a Grand Plan Webinar</a></div>
+            </div>
+            <div class="framed"><img src="/assets/images/hero--4330f82c9625.jpg"
+                    alt="Two people pausing together on a wooded trail"><svg class="hero-artwork"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 356" aria-hidden="true" focusable="false">
+                    <path d="M36 14V69H151 M250 69H285V267H242V342" fill="none" stroke="#FFFFFF" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="miter" />
+                    <circle cx="36" cy="14" r="5.5" fill="#1B538D" />
+                    <circle cx="242" cy="342" r="5.5" fill="#C1C54D" />
+                </svg></div>
+        </div>
+    </section>
+    <div class="golddiv"></div>
+    <section class="cream meaningful">
+        <div class="wrap">
+            <p class="eyebrow">Standing at the edge of something meaningful</p>
+            <hr class="rule">
+            <div class="two top meaningful-grid">
+                <div>
+                    <h2>Life in your fourth quarter looks different from what you expected.</h2>
+                    <p>There's a quiet tension you can't ignore. Maybe when you think about traditional retirement—one
+                        centered on relaxing or traveling—it doesn't feel right for you.</p>
+                    <p>Life in your fourth quarter looks different from what you expected, and you're unsure about what
+                        comes next.</p>
+                    <p style="margin:0">You're not the only one. People like you are wrestling with the ongoing desire
+                        for meaning and purpose and don't know how or where to find it.</p>
+                    <div class="btnrow"><a class="btn blue" href="https://community.thegrandplan.org/forms/32351a3f"
+                            target="_blank" rel="noopener"
+                            aria-label="Sign Up for the Grand Plan Newsletter (opens in a new tab)">Sign Up for the
+                            Grand Plan Newsletter</a></div>
+                </div>
+                <div>
+                    <figure class="stat"><img src="/assets/images/stat-retire--b652fbe1ba06.jpg" alt="">
+                        <figcaption class="overlay"><span class="num">10,000<sup>*</sup></span><span
+                                class="lbl">Americans retire each day</span><span class="src">*Based on Social Security
+                                data</span></figcaption>
+                    </figure>
+                    <figure class="stat" style="margin:0"><img src="/assets/images/stat-population--0b8b20ed4a8e.jpg"
+                            alt="">
+                        <figcaption class="overlay"><span class="num">77M<sup>*</sup></span><span class="lbl">Americans
+                                between the ages of 52–70</span><span class="src">*Based on Census Bureau data</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrap two top questions-grid">
+            <div><img src="/assets/images/questions-portrait--3979c0bdf143.jpg" alt="A man looking toward what's next">
+                <div class="callout">
+                    <div class="t">Purpose doesn't retire. It relocates.</div>
+                    <p>As life changes, purpose changes with it. The Grand Plan helps participants feel anchored instead
+                        of scattered, energized instead of hesitant, and more connected to what they're building toward.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <h2><em class="accent">You want something more,</em><br>but you're not sure what it is or how to find
+                    it.</h2>
+                <p class="eyebrow" style="margin-top:26px">And in the meantime, the questions keep circling.</p>
+                <ul class="arrows">
+                    <li>What can I do now to build toward the life I want in the future?</li>
+                    <li>How can I best use my skills and experience to make a greater impact?</li>
+                    <li>How can I shape a version of "retirement" that energizes me for what's next?</li>
+                    <li>What is possible in this quarter that wasn't possible earlier in my life?</li>
+                </ul>
+                <div class="btnrow"><a class="btn blue" href="/individual-access">I'm Ready to Start The Grand Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="navy on-dark">
+        <div class="wrap">
+            <p class="eyebrow on-dark">A clear plan for what's next</p>
+            <hr class="rule" style="border-color:#2C4258">
+            <div class="two">
+                <div>
+                    <div class="vcard">
+                        <h3>Gain a higher vantage point.</h3>
+                        <p>The Grand Plan's six summits lift you out of uncertainty and into clarity as you reflect on
+                            your strengths, values, and dreams, define specific goals, habits, and opportunities to
+                            pursue, and create a day-to-day life driven by what you want to accomplish and who you want
+                            to be.</p><a class="tlink on-dark" href="/6-summit-journey">Learn more</a>
+                    </div>
+                    <div class="btnrow"><a class="btn citron" href="/webinars">Learn More at a Grand Plan Webinar</a>
+                    </div>
+                </div>
+                <div><img src="/assets/images/cycle-wheel--b3aa2e8b41e9.jpg"
+                        alt="The Grand Plan cycle: Reflect, Discern, Plan, Live — around Clear Purpose"></div>
+            </div>
+        </div>
+    </section>
+    <section class="videoband">
+        <div class="wrap inner">
+            <p class="eyebrow on-dark center">Reimagine what's possible</p>
+            <h2 style="color:#fff">Dream Bigger About the Life You Want Now</h2>
+            <p>The fourth quarter is an opportunity to use everything you've been building—your experiences, skills,
+                relationships, and wisdom—to bring new possibilities to life.</p>
+            <div class="vwrap"><iframe
+                    src="https://player.vimeo.com/video/1168437182?h=e445e82510&title=0&byline=0&portrait=0"
+                    title="The Grand Plan" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen></iframe></div>
+        </div>
+    </section>
+    <section class="cream">
+        <div class="wrap">
+            <p class="eyebrow">Testimonials</p>
+            <h2 style="margin-bottom:40px">Purpose Taking Shape</h2>
+            <div class="grid3">
+                <div class="tcard"><span class="mark">&ldquo;</span>
+                    <p class="q">Having just turned 62, my head and heart had been yearning for something more.
+                        Questions such as, 'What's next?' 'What more can I offer?' and 'How can I serve Christ and live
+                        out my passions in the best way possible at my age/phase?' had been mulling in my head and heart
+                        for the past few months. Going through The Grand Plan helped inspire, equip, and challenge me
+                        for this new season ahead!</p>
+                    <div class="who">Robin Blumenthal</div>
+                    <div class="role">Pastor, Speaker, Author</div>
+                </div>
+                <div class="tcard"><span class="mark">&ldquo;</span>
+                    <p class="q">The Grand Plan exceeded my expectations in many ways. As someone who recently retired,
+                        I had many thoughts about what the years ahead might look like, but those ideas were not well
+                        defined in some areas. This course provided both the framework and inspiration I needed to turn
+                        those thoughts into a clear and meaningful vision for the future.</p>
+                    <div class="who">Mary</div>
+                    <div class="role">Retired Engineer</div>
+                </div>
+                <div class="tcard"><span class="mark">&ldquo;</span>
+                    <p class="q">I highly recommend The Grand Plan to anyone approaching retirement or recently retired.
+                        It provides a constructive, interesting, and Biblically based experience to help with the
+                        transition into your 'fourth quarter' of life. The Grand Plan reinforces the truth that we can
+                        have a fulfilling and impactful life in retirement as we effectively engage our families and
+                        communities while also pursuing our life's passions.</p>
+                    <div class="who">Jeff</div>
+                    <div class="role">Pilot, Former Air Force Officer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrap">
+            <p class="eyebrow">Frequently asked questions</p>
+            <hr class="rule">
+            <div class="faqgrid">
+                <details class="faq">
+                    <summary>Who is The Grand Plan for?</summary>
+                    <div class="a">The Grand Plan is for people approaching or already in their fourth quarter of life.
+                        Most participants are ages 50+, though anyone from about 40 onward will find it useful. It's for
+                        people who have decades of experience and energy left to give, and who want to be deliberate
+                        about where that goes next. If you're asking what comes after the career you built, this was
+                        made for you.</div>
+                </details>
+                <details class="faq">
+                    <summary>How is The Grand Plan structured?</summary>
+                    <div class="a">The process moves through six summits, each building on the one before: Personal
+                        Peace, Meaningful Contribution, Expanded Community, Increased Learning, Clear Legacy, and
+                        Holistic Health. Every summit combines short videos, guided reflection questions, planning
+                        exercises, and practical challenges. The course is entirely self-paced — there's no schedule to
+                        keep and no sessions to attend. You work through an updatable course dashboard and keep lifetime
+                        access to everything.</div>
+                </details>
+                <details class="faq">
+                    <summary>Why does The Grand Plan focus on the fourth quarter of life?</summary>
+                    <div class="a">Roughly 10,000 Americans retire every day, and more than 125 million are over the age
+                        of 50. Most of them were handed a version of retirement built around rest and travel, and for a
+                        lot of people that version doesn't fit. The fourth quarter is when your experience, skills,
+                        relationships, and wisdom are at their fullest — which makes it the wrong time to coast and the
+                        right time to plan.</div>
+                </details>
+                <details class="faq">
+                    <summary>Will participants spend more time on reflection or practical exercises?</summary>
+                    <div class="a">Both, in roughly equal measure. The early summits lean toward reflection — writing
+                        your story, identifying what you're good at, naming what matters. The later ones turn that into
+                        specifics: goals, habits, routines, and a plan for how you'll spend your time. Reflection
+                        without action doesn't change anything, so every summit ends with something to do.</div>
+                </details>
+                <details class="faq">
+                    <summary>Is The Grand Plan only for people who are retired or planning for retirement?</summary>
+                    <div class="a">No. Plenty of participants have no intention of retiring, and some are years away
+                        from thinking about it. The Grand Plan isn't about leaving work — it's about deciding what you
+                        want this stretch of your life to be for. Retirees, people still working, and people somewhere
+                        in between all go through the same six summits.</div>
+                </details>
+                <details class="faq">
+                    <summary>Can The Grand Plan be used by churches and small groups?</summary>
+                    <div class="a">Yes, and it's often better that way. Churches, small groups, cohorts and community
+                        circles use The Grand Plan to move through the process together. Because the course is
+                        self-paced, no trained facilitator is required — though a church or group that wants to teach it
+                        themselves certainly can.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    <section class="closing"><img src="/assets/images/closing-cta--b723111d0ce3.jpg" alt="">
+        <div class="over">
+            <div class="wrap">
+                <div class="box">
+                    <h2><em class="accent" style="color:var(--citron)">Your fourth quarter</em><br>can be your best
+                        quarter.</h2>
+                    <p>Get started with The Grand Plan on-demand growth course today. Or, you can schedule a
+                        conversation with our team and explore how The Grand Plan can help you dream bigger about your
+                        fourth quarter and put a plan into action for living it out.</p>
+                    <div class="btnrow"><a class="btn citron" href="/individual-access">I'm Ready to Start The Grand
+                            Plan</a><a class="btn blue" href="/webinars">Learn More at a Grand Plan Webinar</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="tgp-footer">
+        <div class="tgp-footer-wrap">
+            <div class="tgp-footer-grid">
+                <div><img class="tgp-footer-logo" src="/assets/images/logo-white--21de178f1ae7.png"
+                        alt="The Grand Plan">
+                    <p class="tgp-footer-tagline">Live your fourth quarter with purpose.</p>
+                    <div class="tgp-footer-social"><a class="tgp-social-icon"
+                            href="https://www.facebook.com/groups/2991527814527315/"
+                            aria-label="Visit The Grand Plan Facebook group"><svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512" aria-hidden="true" focusable="false">
+                                <path
+                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.38 0 225.36 0C152.22 0 104.42 44.38 104.42 124.72v70.62H23.11V288h81.31v224h100.2V288z" />
+                            </svg></a></div>
+                </div>
+                <div>
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/6-summit-journey">6-Summit Journey</a></li>
+                        <li><a href="/on-demand-course">On-Demand Course</a></li>
+                        <li><a href="/groups">Groups</a></li>
+                        <li><a href="/about">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="/contact">Schedule a Conversation</a></li>
+                        <li><a href="https://community.thegrandplan.org">Community</a></li>
+                        <li><a href="/donate">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tgp-footer-bottom"><span>© 2026 The Grand Plan Corporation&nbsp;&nbsp; All Rights
+                    Reserved.</span><span><a href="/privacy-policy">Privacy Policy</a>&nbsp;&nbsp;<a
+                        href="/terms-of-use">Terms of Use</a></span></div>
+        </div>
+    </footer>
+    <script defer src="/assets/js/navigation.js"></script>
+</body>
+
+</html>
