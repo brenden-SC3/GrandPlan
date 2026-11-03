@@ -1,4 +1,35 @@
 (function () {
+  var label = 'Join a Grand Plan Introduction Webinar';
+  document.querySelectorAll('header .nav > a.btn.blue').forEach(function (link) {
+    link.textContent = label;
+    link.setAttribute('href', '/webinars');
+    link.classList.add('tgp-nav-webinar');
+  });
+  document.querySelectorAll('header .nav > a:first-child img').forEach(function (image) {
+    image.setAttribute('src', '/assets/images/TheGrandPlan-Logo_Color.png');
+    image.removeAttribute('srcset');
+    image.removeAttribute('sizes');
+  });
+  document.querySelectorAll('.tgp-footer .tgp-footer-logo').forEach(function (image) {
+    image.setAttribute('src', '/assets/images/TheGrandPlan-Logo_Reversed.png');
+    image.removeAttribute('srcset');
+    image.removeAttribute('sizes');
+  });
+  document.querySelectorAll('.tgp-footer li > a[href="/contact"]').forEach(function (contact) {
+    var item = contact.parentElement;
+    var list = item.parentElement;
+    if (list.querySelector('.tgp-footer-webinar')) return;
+    var webinarItem = document.createElement('li');
+    var link = document.createElement('a');
+    link.className = 'tgp-footer-webinar';
+    link.setAttribute('href', '/webinars');
+    link.textContent = label;
+    webinarItem.appendChild(link);
+    item.insertAdjacentElement('afterend', webinarItem);
+  });
+})();
+
+(function () {
   document.querySelectorAll('.tgp-footer a[href="/about"]').forEach(function (link) {
     if (link.textContent.trim() === 'About Us') link.textContent = 'About';
   });

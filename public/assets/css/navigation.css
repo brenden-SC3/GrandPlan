@@ -12,3 +12,20 @@ header .nav > ul.open{top:100%;left:0;right:0}
 header .nav .nav-mobile-cta{display:block;width:100%}
 header .nav .nav-mobile-cta > a.btn.blue{display:block;width:100%;min-height:44px;padding:14px 20px;text-align:center;white-space:normal;background:var(--blue);color:#fff}
 }
+
+/* Updated brand assets retain their natural proportions. */
+header .nav img[src="/assets/images/TheGrandPlan-Logo_Color.png"],.tgp-footer img.tgp-footer-logo[src="/assets/images/TheGrandPlan-Logo_Reversed.png"]{aspect-ratio:auto;height:auto;object-fit:contain}
+header .nav > a:first-child{flex-shrink:0}
+header .nav a.tgp-nav-webinar{white-space:normal;text-align:center;line-height:1.5}
+@media(min-width:941px){
+header .nav{gap:24px}
+header .nav > ul{gap:20px;min-width:0}
+header .nav > a.tgp-nav-webinar{flex:0 1 260px;max-width:260px;padding:14px 20px}
+}
+@media(min-width:941px) and (max-width:1100px){
+header .nav{gap:16px}
+header .nav > ul{gap:12px}
+header .nav > a.tgp-nav-webinar{flex-basis:230px;padding:14px 16px}
+}
+.tgp-footer a.tgp-footer-webinar{display:inline-block;max-width:100%;padding:12px 16px;background:#1B538D;color:#fff;font-weight:700;line-height:1.5;white-space:normal;text-align:center}
+.tgp-footer a.tgp-footer-webinar:hover{background:#2469ad;color:#fff}
