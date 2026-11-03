@@ -30,6 +30,33 @@
 })();
 
 (function () {
+  var canonical = document.querySelector('link[rel="canonical"]');
+  var page = canonical && new URL(canonical.href).pathname.replace(/\/$/, '');
+  if (page === '') {
+    var row = document.querySelector('section.hero .btnrow');
+    var purchase = row && row.querySelector('a.btn.blue');
+    if (purchase && !row.querySelector('.tgp-home-church-cta')) {
+      var church = document.createElement('a');
+      church.className = 'btn citron tgp-home-church-cta';
+      church.setAttribute('href', '/groups');
+      church.textContent = 'Learn More About the Grand Plan for Your Church';
+      purchase.insertAdjacentElement('afterend', church);
+      row.classList.add('tgp-home-hero-actions');
+    }
+  }
+  if (page === '/groups') {
+    document.querySelectorAll('.steps .stepcard .t').forEach(function (heading) {
+      if (heading.textContent.trim().toLowerCase() !== 'attend a get started webinar' || heading.querySelector('a')) return;
+      var link = document.createElement('a');
+      link.setAttribute('href', '/webinars');
+      link.className = 'tgp-step-webinar-link';
+      link.textContent = heading.textContent;
+      heading.replaceChildren(link);
+    });
+  }
+})();
+
+(function () {
   document.querySelectorAll('.tgp-footer a[href="/about"]').forEach(function (link) {
     if (link.textContent.trim() === 'About Us') link.textContent = 'About';
   });
