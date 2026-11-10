@@ -72,6 +72,9 @@
 })();
 
 (function () {
+  document.querySelectorAll('.tgp-footer a[href="/groups"]').forEach(function (link) {
+    if (link.textContent.trim() === 'Groups') link.textContent = 'Churches';
+  });
   document.querySelectorAll('.tgp-footer a[href="/about"]').forEach(function (link) {
     if (link.textContent.trim() === 'About Us') link.textContent = 'About';
   });
