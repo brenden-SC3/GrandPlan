@@ -1,4 +1,19 @@
 (function () {
+  document.querySelectorAll('header .nav > ul').forEach(function (menu) {
+    var paths = ['/about', '/6-summit-journey', '/groups', '/on-demand-course', '/donate'];
+    var items = paths.map(function (path) {
+      return Array.from(menu.children).find(function (item) {
+        var link = item.querySelector('a');
+        return link && link.getAttribute('href') === path;
+      });
+    });
+    if (items.some(function (item) { return !item; })) return;
+    items[2].querySelector('a').textContent = 'Churches';
+    items.forEach(function (item) { menu.appendChild(item); });
+  });
+})();
+
+(function () {
   var label = 'Join a Grand Plan Introduction Webinar';
   document.querySelectorAll('header .nav > a.btn.blue').forEach(function (link) {
     link.textContent = label;
