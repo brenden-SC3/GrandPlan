@@ -33,3 +33,6 @@ section.hero .btnrow.tgp-home-hero-actions{flex-direction:column;align-items:fle
 section.hero .tgp-home-church-cta{max-width:100%;white-space:normal;text-align:center}
 .steps .stepcard .t a.tgp-step-webinar-link{color:var(--blue);font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;text-underline-offset:3px}
 .steps .stepcard .t a.tgp-step-webinar-link:hover{color:var(--teal)}
+
+/* Keep navigation gutters consistent without changing page-content gutters. */
+@media(max-width:480px){header .nav{--pad:32px}}
