@@ -7,8 +7,8 @@ header .nav{position:relative;flex-wrap:nowrap;gap:20px;padding:16px var(--pad)}
 header .nav > a:first-child{max-width:calc(100% - 64px)}
 header .nav > .navtoggle{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;margin-left:auto;padding:4px}
 header .nav > a.btn.blue{display:none}
-header .nav > ul{z-index:100}
-header .nav > ul.open{top:100%;left:0;right:0}
+header .nav > ul{display:none;z-index:100}
+header .nav > ul.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;margin:0;padding:22px var(--pad);gap:18px;box-shadow:0 12px 24px rgba(0,0,0,.09)}
 header .nav .nav-mobile-cta{display:block;width:100%}
 header .nav .nav-mobile-cta > a.btn.blue{display:block;width:100%;min-height:44px;padding:14px 20px;text-align:center;white-space:normal;background:var(--blue);color:#fff}
 }
